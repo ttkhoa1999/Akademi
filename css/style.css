@@ -9680,7 +9680,7 @@ div, span, ol, ul {
     display: flex;
     height: 100%;
     width: 100%;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     font-size: 1.125rem;
     color: #fff;
@@ -28652,7 +28652,7 @@ tr .trans-td-list {
         top: 12px; } }
 
 .page-title .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
-  width: 7.688rem; }
+  width: 8.688rem; }
 
 .all {
   display: none !important; }

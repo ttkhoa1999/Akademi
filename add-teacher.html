@@ -17,7 +17,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Page Title Here -->
-	<title>Akademi : School and Education Management Admin Dashboard Template</title>
+	<title>Thêm giáo viên</title>
 
 <!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="images/favicon.png" >
@@ -619,7 +619,7 @@
 					<div class="collapse navbar-collapse justify-content-between">
 						<div class="header-left">
 						<div class="dashboard_bar">
-							Add New Teacher
+							Thêm giáo viên
 						</div>
 						</div>
 					  <ul class="navbar-nav header-right">
@@ -1205,6 +1205,10 @@
         ***********************************-->
         <div class="content-body">
 			<div class="container-fluid">
+				<div class="detail-back" style="margin-bottom: 1.875rem; cursor: pointer;">
+					<i class="fa fa-arrow-left p-2"></i>
+					Quay lại
+				</div>
 				<div class="row">
 					<div class="col-xl-12">
 						<div class="card">
@@ -1400,12 +1404,10 @@ $("#imageUpload").change(function() {
 		$('#imagePreview').css('background-image', 'url(' + imageUrl + ')');
 	});
 	
-	
-	
+	$('.detail-back').on("click", function(){
+		window.history.go(-1);
+	})
 		
-		
- 
-	
 	
 
 

@@ -616,7 +616,7 @@
 					<div class="collapse navbar-collapse justify-content-between">
 						<div class="header-left">
 						<div class="dashboard_bar">
-							Teachers
+							Giáo viên
 						</div>
 						</div>
 						<ul class="navbar-nav header-right">
@@ -929,7 +929,7 @@
 
 											</div>
 											<div class="card-body p-3">
-												<a href="app-profile.html" class="dropdown-item ai-icon ">
+												<a href="./teacher-detail.html" class="dropdown-item ai-icon ">
 													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="svg-main-icon">
 														<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 															<polygon points="0 0 24 0 24 24 0 24"/>
@@ -1059,7 +1059,7 @@
 						<span class="nav-text">Apps</span>
 						</a>
 						<ul aria-expanded="false">
-							<li><a href="./app-profile.html">Profile</a></li>
+							<li><a href="././teacher-detail.html">Profile</a></li>
 							<li><a href="./edit-profile.html">Edit Profile</a></li>
 							<li><a href="./post-details.html">Post Details</a></li>
 							<li><a class="has-arrow" href="javascript:void(0);" aria-expanded="false">Email</a>
@@ -1211,7 +1211,7 @@
 							<div class="col-xl-12">
 								<div class="page-title flex-wrap">
 									<div class="input-group search-area mb-md-0 mb-3">
-										<input type="text" class="form-control" placeholder="Search here...">
+										<input type="text" class="form-control" placeholder="Tìm kiếm...">
 										<span class="input-group-text"><a href="javascript:void(0)">
 											<svg width="15" height="15" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path d="M17.5605 15.4395L13.7527 11.6317C14.5395 10.446 15 9.02625 15 7.5C15 3.3645 11.6355 0 7.5 0C3.3645 0 0 3.3645 0 7.5C0 11.6355 3.3645 15 7.5 15C9.02625 15 10.446 14.5395 11.6317 13.7527L15.4395 17.5605C16.0245 18.1462 16.9755 18.1462 17.5605 17.5605C18.1462 16.9747 18.1462 16.0252 17.5605 15.4395V15.4395ZM2.25 7.5C2.25 4.605 4.605 2.25 7.5 2.25C10.395 2.25 12.75 4.605 12.75 7.5C12.75 10.395 10.395 12.75 7.5 12.75C4.605 12.75 2.25 10.395 2.25 7.5V7.5Z" fill="#01A3FF"/>
@@ -1219,14 +1219,20 @@
 										</a>
 										</span>
 									</div>
-									<div>
+									<div class="d-flex align-items-center">
 										<select class="default-select me-3" aria-label="Default">
-											<option selected>Newest</option>
-											<option value="1">Oldest</option>
-											<option value="2">Recent</option>
+											<option selected>Tất cả</option>
+											<option value="1">Đăng ký</option>
+											<option value="2">Đã duyệt</option>
+											<option value="3">Từ chối</option>
+										</select>
+										<select class="default-select me-3" aria-label="Default">
+											<option selected>Mới nhất</option>
+											<option value="1">Cũ nhất</option>
+											<option value="2">Gần đây</option>
 										</select>
 										<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-										  + New Teacher
+										  + Thêm giáo viên
 										</button>
 									</div>
 								</div>
@@ -1247,7 +1253,7 @@
                                                         </div>
                                                         <div class="user-details">
                                                             <h4 class="user-name mb-0">Dimitres Viga</h4>
-                                                            <p>Teacher</p>
+                                                            <p>Giáo viên</p>
                                                         </div>
                                                     </div>
                                                     <div class="dropdown">
@@ -1268,7 +1274,7 @@
 												   <span class="badge badge-danger light">Art</span>
                                                 </div>
 												<div class="d-flex align-items-center">
-													<a href="app-profile.html" class="btn  btn-primary btn-sm w-50 me-2"><i class="fa-solid fa-user me-2"></i>Profile</a>
+													<a href="./teacher-detail.html" class="btn  btn-primary btn-sm w-50 me-2"><i class="fa-solid fa-user me-2"></i>Xem chi tiết</a>
 													<a href="chat.html" class="btn  btn-light btn-sm w-50"><i class="fa-sharp fa-regular fa-envelope me-2"></i>Chat</a>
 												</div>
                                             </div>
@@ -1286,7 +1292,7 @@
                                                         </div>
                                                         <div class="user-details">
                                                             <h4 class="user-name mb-0">Dimitres Viga</h4>
-                                                            <p>Teacher</p>
+                                                            <p>Trợ giảng</p>
                                                         </div>
                                                     </div>
                                                     <div class="dropdown">
@@ -1307,7 +1313,7 @@
 												   <span class="badge badge-danger light">Art</span>
                                                 </div>
 												<div class="d-flex align-items-center">
-													<a href="app-profile.html" class="btn  btn-primary btn-sm w-50 me-2"><i class="fa-solid fa-user me-2"></i>Profile</a>
+													<a href="./teacher-detail.html" class="btn  btn-primary btn-sm w-50 me-2"><i class="fa-solid fa-user me-2"></i>Xem chi tiết</a>
 													<a href="chat.html" class="btn  btn-light btn-sm w-50"><i class="fa-sharp fa-regular fa-envelope me-2"></i>Chat</a>
 												</div>
                                             </div>
@@ -1325,7 +1331,7 @@
                                                         </div>
                                                         <div class="user-details">
                                                             <h4 class="user-name mb-0">Dimitres Viga</h4>
-                                                            <p>Teacher</p>
+                                                            <p>Giáo viên</p>
                                                         </div>
                                                     </div>
                                                     <div class="dropdown">
@@ -1346,7 +1352,7 @@
 												   <span class="badge badge-danger light">Art</span>
                                                 </div>
 												<div class="d-flex align-items-center">
-													<a href="app-profile.html" class="btn  btn-primary btn-sm w-50 me-2"><i class="fa-solid fa-user me-2"></i>Profile</a>
+													<a href="./teacher-detail.html" class="btn  btn-primary btn-sm w-50 me-2"><i class="fa-solid fa-user me-2"></i>Xem chi tiết</a>
 													<a href="chat.html" class="btn  btn-light btn-sm w-50"><i class="fa-sharp fa-regular fa-envelope me-2"></i>Chat</a>
 												</div>
                                             </div>
@@ -1364,7 +1370,7 @@
                                                         </div>
                                                         <div class="user-details">
                                                             <h4 class="user-name mb-0">Dimitres Viga</h4>
-                                                            <p>Teacher</p>
+                                                            <p>Giáo viên/Trợ giảng</p>
                                                         </div>
                                                     </div>
                                                     <div class="dropdown">
@@ -1385,7 +1391,7 @@
 												   <span class="badge badge-danger light">Art</span>
                                                 </div>
 												<div class="d-flex align-items-center">
-													<a href="app-profile.html" class="btn  btn-primary btn-sm w-50 me-2"><i class="fa-solid fa-user me-2"></i>Profile</a>
+													<a href="./teacher-detail.html" class="btn  btn-primary btn-sm w-50 me-2"><i class="fa-solid fa-user me-2"></i>Xem chi tiết</a>
 													<a href="chat.html" class="btn  btn-light btn-sm w-50"><i class="fa-sharp fa-regular fa-envelope me-2"></i>Chat</a>
 												</div>
                                             </div>
@@ -1403,7 +1409,7 @@
                                                         </div>
                                                         <div class="user-details">
                                                             <h4 class="user-name mb-0">Dimitres Viga</h4>
-                                                            <p>Teacher</p>
+                                                            <p>Giáo viên</p>
                                                         </div>
                                                     </div>
                                                     <div class="dropdown">
@@ -1424,7 +1430,7 @@
 												   <span class="badge badge-danger light">Art</span>
                                                 </div>
 												<div class="d-flex align-items-center">
-													<a href="app-profile.html" class="btn  btn-primary btn-sm w-50 me-2"><i class="fa-solid fa-user me-2"></i>Profile</a>
+													<a href="./teacher-detail.html" class="btn  btn-primary btn-sm w-50 me-2"><i class="fa-solid fa-user me-2"></i>Xem chi tiết</a>
 													<a href="chat.html" class="btn  btn-light btn-sm w-50"><i class="fa-sharp fa-regular fa-envelope me-2"></i>Chat</a>
 												</div>
                                             </div>
@@ -1442,7 +1448,7 @@
                                                         </div>
                                                         <div class="user-details">
                                                             <h4 class="user-name mb-0">Dimitres Viga</h4>
-                                                            <p>Teacher</p>
+                                                            <p>Trợ giản</p>
                                                         </div>
                                                     </div>
                                                     <div class="dropdown">
@@ -1463,7 +1469,7 @@
 												   <span class="badge badge-danger light">Art</span>
                                                 </div>
 												<div class="d-flex align-items-center">
-													<a href="app-profile.html" class="btn  btn-primary btn-sm w-50 me-2"><i class="fa-solid fa-user me-2"></i>Profile</a>
+													<a href="./teacher-detail.html" class="btn  btn-primary btn-sm w-50 me-2"><i class="fa-solid fa-user me-2"></i>Xem chi tiết</a>
 													<a href="chat.html" class="btn  btn-light btn-sm w-50"><i class="fa-sharp fa-regular fa-envelope me-2"></i>Chat</a>
 												</div>
                                             </div>
@@ -1481,7 +1487,7 @@
                                                         </div>
                                                         <div class="user-details">
                                                             <h4 class="user-name mb-0">Dimitres Viga</h4>
-                                                            <p>Teacher</p>
+                                                            <p>Trợ giảng</p>
                                                         </div>
                                                     </div>
                                                     <div class="dropdown">
@@ -1502,7 +1508,7 @@
 												   <span class="badge badge-danger light">Art</span>
                                                 </div>
 												<div class="d-flex align-items-center">
-													<a href="app-profile.html" class="btn  btn-primary btn-sm w-50 me-2"><i class="fa-solid fa-user me-2"></i>Profile</a>
+													<a href="./teacher-detail.html" class="btn  btn-primary btn-sm w-50 me-2"><i class="fa-solid fa-user me-2"></i>Xem chi tiết</a>
 													<a href="chat.html" class="btn  btn-light btn-sm w-50"><i class="fa-sharp fa-regular fa-envelope me-2"></i>Chat</a>
 												</div>
                                             </div>
@@ -1520,7 +1526,7 @@
                                                         </div>
                                                         <div class="user-details">
                                                             <h4 class="user-name mb-0">Dimitres Viga</h4>
-                                                            <p>Teacher</p>
+                                                            <p>Giáo viên</p>
                                                         </div>
                                                     </div>
                                                     <div class="dropdown">
@@ -1541,7 +1547,7 @@
 												   <span class="badge badge-danger light">Art</span>
                                                 </div>
 												<div class="d-flex align-items-center">
-													<a href="app-profile.html" class="btn  btn-primary btn-sm w-50 me-2"><i class="fa-solid fa-user me-2"></i>Profile</a>
+													<a href="./teacher-detail.html" class="btn  btn-primary btn-sm w-50 me-2"><i class="fa-solid fa-user me-2"></i>Xem chi tiết</a>
 													<a href="chat.html" class="btn  btn-light btn-sm w-50"><i class="fa-sharp fa-regular fa-envelope me-2"></i>Chat</a>
 												</div>
                                             </div>
@@ -1559,7 +1565,7 @@
                                                         </div>
                                                         <div class="user-details">
                                                             <h4 class="user-name mb-0">Dimitres Viga</h4>
-                                                            <p>Teacher</p>
+                                                            <p>Giáo viên/Trợ giảng</p>
                                                         </div>
                                                     </div>
                                                     <div class="dropdown">
@@ -1580,7 +1586,7 @@
 												   <span class="badge badge-danger light">Art</span>
                                                 </div>
 												<div class="d-flex align-items-center">
-													<a href="javascript:void(0);" class="btn  btn-primary btn-sm w-50 me-2"><i class="fa-solid fa-user me-2"></i>Profile</a>
+													<a href="javascript:void(0);" class="btn  btn-primary btn-sm w-50 me-2"><i class="fa-solid fa-user me-2"></i>Xem chi tiết</a>
 													<a href="javascript:void(0);" class="btn  btn-light btn-sm w-50"><i class="fa-sharp fa-regular fa-envelope me-2"></i>Chat</a>
 												</div>
                                             </div>
@@ -1598,7 +1604,7 @@
                                                         </div>
                                                         <div class="user-details">
                                                             <h4 class="user-name mb-0">Dimitres Viga</h4>
-                                                            <p>Teacher</p>
+                                                            <p>Trợ giảng</p>
                                                         </div>
                                                     </div>
                                                     <div class="dropdown">
@@ -1619,7 +1625,7 @@
 												   <span class="badge badge-danger light">Art</span>
                                                 </div>
 												<div class="d-flex align-items-center">
-													<a href="app-profile.html" class="btn  btn-primary btn-sm w-50 me-2"><i class="fa-solid fa-user me-2"></i>Profile</a>
+													<a href="./teacher-detail.html" class="btn  btn-primary btn-sm w-50 me-2"><i class="fa-solid fa-user me-2"></i>Xem chi tiết</a>
 													<a href="chat.html" class="btn  btn-light btn-sm w-50"><i class="fa-sharp fa-regular fa-envelope me-2"></i>Chat</a>
 												</div>
                                             </div>
@@ -1637,7 +1643,7 @@
                                                         </div>
                                                         <div class="user-details">
                                                             <h4 class="user-name mb-0">Dimitres Viga</h4>
-                                                            <p>Teacher</p>
+                                                            <p>Giáo viên</p>
                                                         </div>
                                                     </div>
                                                     <div class="dropdown">
@@ -1658,7 +1664,7 @@
 												   <span class="badge badge-danger light">Art</span>
                                                 </div>
 												<div class="d-flex align-items-center">
-													<a href="app-profile.html" class="btn  btn-primary btn-sm w-50 me-2"><i class="fa-solid fa-user me-2"></i>Profile</a>
+													<a href="./teacher-detail.html" class="btn  btn-primary btn-sm w-50 me-2"><i class="fa-solid fa-user me-2"></i>Xem chi tiết</a>
 													<a href="chat.html" class="btn  btn-light btn-sm w-50"><i class="fa-sharp fa-regular fa-envelope me-2"></i>Chat</a>
 												</div>
                                             </div>
@@ -1676,7 +1682,7 @@
                                                         </div>
                                                         <div class="user-details">
                                                             <h4 class="user-name mb-0">Dimitres Viga</h4>
-                                                            <p>Teacher</p>
+                                                            <p>Giáo viên</p>
                                                         </div>
                                                     </div>
                                                     <div class="dropdown">
@@ -1697,7 +1703,7 @@
 												   <span class="badge badge-danger light">Art</span>
                                                 </div>
 												<div class="d-flex align-items-center">
-													<a href="app-profile.html" class="btn  btn-primary btn-sm w-50 me-2"><i class="fa-solid fa-user me-2"></i>Profile</a>
+													<a href="./teacher-detail.html" class="btn  btn-primary btn-sm w-50 me-2"><i class="fa-solid fa-user me-2"></i>Xem chi tiết</a>
 													<a href="chat.html" class="btn  btn-light btn-sm w-50"><i class="fa-sharp fa-regular fa-envelope me-2"></i>Chat</a>
 												</div>
                                             </div>
@@ -1712,7 +1718,7 @@
 						</div>
 					
 						<div class="table-pagenation teach">
-							<small>Showing <span>1-5</span>from <span>100</span>data</small>
+							<small>Showing <span>1-5</span> from <span>100</span> data</small>
 							<nav>
 								<ul class="pagination pagination-gutter pagination-primary no-bg">
 									<li class="page-item page-indicator">
