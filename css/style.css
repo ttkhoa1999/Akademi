@@ -10432,7 +10432,7 @@ svg.pulse-svg {
     border-width: 0;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     margin: 0;
-    width: 14.188rem;
+    width: 18.188rem;
     margin: 0;
     border-radius: 0px 0px 5px 5px;
     margin-top: -8px; }
@@ -31100,5 +31100,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background-color: transparent; }
     [data-theme-version="dark"] .footer .copyright p {
       color: #fff; }
-
+.hidden{
+  display:none;
+}
 /*# sourceMappingURL=style.css.map */
