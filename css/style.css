@@ -322,7 +322,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   :root {
     scroll-behavior: smooth; } }
 
-body {
+body{
   margin: 0;
   font-family: var(--bs-body-font-family);
   font-size: var(--bs-body-font-size);
@@ -334,6 +334,9 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
+span{
+  font-family: var(--bs-body-font-family) !important;
+}
 hr {
   margin: 1rem 0;
   color: inherit;
