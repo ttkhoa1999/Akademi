@@ -209,7 +209,7 @@
           data: [30, 25, 45, 30, 25, 35, 20, 45, 35, 20, 35,20]
         }],
           chart: {
-          height: 300,
+          height: 450,
           type: 'line',
           stacked: false,
 		  toolbar: {
