@@ -963,7 +963,7 @@
 
 					</li>
 					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
-						<i class="material-symbols-outlined">groups</i>
+						<i class="material-symbols-outlined">language</i>
 						<span class="nav-text">Mạng xã hội</span>
 					</a>
 					<ul aria-expanded="false">
@@ -1114,6 +1114,9 @@
             Sidebar end
         ***********************************-->
 		
+
+	
+
 		<!--**********************************
             Content body start
         ***********************************-->
@@ -1164,7 +1167,8 @@
 										<div>
 										<div class="d-flex justify-content-between align-items-center">
 											<h2 class="mb-0">Giáo viên Thanh Nga</h2>
-											<span class="badge badge-sm light badge-primary">Đang giảng dạy</span>
+											<!-- <span class="badge badge-sm light badge-primary">Đang giảng dạy</span> -->
+											<a href="javascript:void(0)" class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">Phản hồi</a>
 											</div>
 											<p  class="text-primary font-w600">Giáo viên</p>
 										</div>
@@ -1423,8 +1427,37 @@
 		<!--**********************************
 					moal
 				***********************************-->
-		
-		
+			<!--modal-->
+			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-center">
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <h1 class="modal-title fs-5" id="exampleModalLabel">Xét duyệt giáo viên </h1>
+					  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body content-request">
+						<div class="text-res">
+							<h5 class="text-center">Đồng ý xét duyệt giáo viên Thanh Nga giảng dạy tại [CSGD]</h5>
+						</div>
+						
+						<div class="w-100 select-res hidden">
+						<label for="" class="form-label text-primary">Chọn bộ môn CSGD<span class="required">*</span></label>	
+							<select class="w-100" id="#multiple-select-clear-field" multiple required>
+								<option value="1">Tiếng Anh</option>
+								<option value="2">Tiếng Pháp</option>
+								<option value="3">Tiếng Trung</option>
+								<option value="4">Tiếng Nhật</option>
+							</select>
+						</div>
+					</div>
+					<div class="modal-footer">
+							<button type="button" class="btn btn-danger light refusebtn" data-bs-dismiss="modal">Từ chối</button>
+							<button type="button" class="btn btn-primary agreebtn">Đồng ý</button>
+							<button type="button" class="btn btn-primary acceptbtn hidden">Xác nhận</button>
+					</div>
+				  </div>
+				</div>
+			  </div>
         <!--**********************************
             Content body end
         ***********************************-->
@@ -1471,9 +1504,40 @@
 	<script src="js/dlabnav-init.js"></script>
 	
    <script>
-	$('.detail-back').on("click", function(){
+
+	$(document).ready(function(){
+		const html = `<div class="w-100">
+			<label for="" class="form-label text-primary">Chọn bộ môn CSGD<span class="required">*</span></label>	
+				<select class="w-100" id="#multiple-select-clear-field" multiple>
+					<option value="1">Tiếng Anh</option>
+					<option value="2">Tiếng Pháp</option>
+					<option value="3">Tiếng Trung</option>
+					<option value="4">Tiếng Nhật</option>
+				</select>
+			</div>`;
+		$('.detail-back').on("click", function(){
 		window.history.go(-1);
 	})
+		$('.agreebtn').on("click", function(){
+				$('.text-res').addClass('hidden');
+				$('.agreebtn').addClass('hidden');
+				$('.select-res').removeClass('hidden');
+				$('.acceptbtn').removeClass('hidden')
+		})
+		$('.refusebtn').on('click', function(){
+			$('.select-res').addClass('hidden')
+			$('.text-res').removeClass('hidden');
+			$('.agreebtn').removeClass('hidden')
+			$('.acceptbtn').addClass('hidden')
+		})
+	})
+	$( '#multiple-select-clear-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+    allowClear: true,
+} );
    </script>
 	
 

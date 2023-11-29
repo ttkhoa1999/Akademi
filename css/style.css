@@ -9659,7 +9659,7 @@ div, span, ol, ul {
   width: var(--width);
   display: inline-block;
   background-color: var(--nav-headbg);
-  text-align: left;
+  text-align: center;
   position: absolute;
   top: 0;
   transition: all .2s ease;
@@ -9687,12 +9687,25 @@ div, span, ol, ul {
     align-items: center;
     font-size: 1.125rem;
     color: #fff;
+    max-width:80%;
     text-decoration: none;
     padding-left: 1.675rem;
     padding-right: 1.675rem;
-    font-weight: 700; }
+    font-weight: 700; 
+    background: url("../images/logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height:60px;
+    margin:14px auto 14px auto;
+  }
     @media only screen and (max-width: 87.5rem) {
       .nav-header .brand-logo {
+        background: url("../images/logomobile.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height:40px;
         padding-left: 1.25rem;
         padding-right: 1.25rem; } }
     [data-sidebar-style="compact"] .nav-header .brand-logo,
@@ -31105,5 +31118,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
       color: #fff; }
 .hidden{
   display:none;
+}
+.btn-remove{
+  position:absolute;
+  top:10px;
+  right:15px;
+  cursor:pointer;
+  z-Index: 10;
+}
+.btn-remove:hover{
+  opacity:0.7;
+  transition:0.5s all;
 }
 /*# sourceMappingURL=style.css.map */
