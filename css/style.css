@@ -22464,6 +22464,11 @@ button.ck.ck-button.ck-off:hover {
   [data-theme-version="dark"] .accordion-header {
     color: #fff !important;
     border-color: rgba(255, 255, 255, 0.1); }
+    .accordion-right-icon{
+      position: absolute;
+      right: 1.5625rem;
+      top: 50%;
+      transform: translateY(-50%); }
   .accordion-header-indicator {
     font-family: 'themify';
     position: absolute;

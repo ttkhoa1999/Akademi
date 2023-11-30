@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
     	
-   <meta charset="utf-8">
+    <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="author" content="DexignLab" >
 	<meta name="robots" content="" >
@@ -17,20 +17,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Page Title Here -->
-	<title>Danh sách cơ sở</title>
+	<title>Cơ sở - Thông tin chi tiết</title>
 
 <!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="images/favicon.png" >
-	<link rel="stylesheet" href="./vendor/chartist/css/chartist.min.css">
 	<link href="vendor/wow-master/css/libs/animate.css" rel="stylesheet">
 	<link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
-	
-	<link href="vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
-	
+	<link rel="stylesheet" href="./vendor/jquery-nice-select/css/nice-select.css">
+	<!--swiper-slider-->
 	
 	<!-- Style css -->
-	<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-	<!-- Style css -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 	
 </head>
@@ -39,9 +36,19 @@
     <!--*******************
         Preloader start
     ********************-->
-	<div id="preloader">
-		<div class="loader"></div>
-	  </div>
+	 	
+    <div id="preloader">
+	  <div class="loader">
+		<div class="dots">
+			  <div class="dot mainDot"></div>
+			  <div class="dot"></div>
+			  <div class="dot"></div>
+			  <div class="dot"></div>
+			  <div class="dot"></div>
+		</div>
+			
+		</div>
+	</div>
     <!--*******************
         Preloader end
     ********************-->
@@ -51,12 +58,10 @@
     ***********************************-->
     <div id="main-wrapper">
 	
-         <!--**********************************
-            Nav header start
-        ***********************************-->
-        <div class="nav-header">
+		<div class="nav-header">
             <a href="index.html" class="brand-logo">
-			</a>
+				<img src="./images/logo.png" style="width: 165px; height: 60px; object-fit: contain;" alt="">
+            </a>
 			
             <div class="nav-control">
                 <div class="hamburger">
@@ -588,7 +593,7 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
 						<div class="dashboard_bar">
-							Danh sách cơ sở
+							Cơ sở - Thông tin chi tiết
 						</div>
                         </div>
                         <ul class="navbar-nav header-right">
@@ -945,7 +950,7 @@
         <!--**********************************
             Sidebar start
         ***********************************-->
-        <div class="dlabnav">
+		<div class="dlabnav">
 			<div class="dlabnav-scroll">	
 				<ul class="metismenu" id="menu">
 					<li><a href="./index.html" aria-expanded="false">
@@ -987,7 +992,6 @@
 						<i class="material-symbols-outlined">person</i>
 						<span class="nav-text">Học viên</span>
 					</a>
-				
 						<ul aria-expanded="false">
 							<li><a href="./recruitment.html">Dự tuyển</a></li>
 							<li><a href="./current-student.html">Học viên hiện tại</a></li>
@@ -998,10 +1002,14 @@
 						<i class="material-symbols-outlined">home_work</i>
 						<span class="nav-text">Cơ sở vật chất</span>
 					</a>
-						<ul aria-expanded="false">
+					<ul aria-expanded="false">
+						<li><a href="javascript:void(0)">Danh sách cơ sở</a></li>
+						<li><a href="javascript:void(0)">Tạo cơ sở mới</a></li>
+					</ul>
+						<!-- <ul aria-expanded="false">
 							<li><a href="./list-facilities.html">Danh sách cơ sở</a></li>
 							<li><a href="./create-facilities.html">Tạo cơ sở mới</a></li>
-						</ul>
+						</ul> -->
 					</li>
 					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
 						<i class="material-symbols-outlined">menu_book</i>
@@ -1090,16 +1098,21 @@
 				
 			</div>
         </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+		
 		<!--**********************************
             Content body start
         ***********************************-->
         <div class="content-body">
-            <!-- row -->
 			<div class="container-fluid">
 				<!-- Row -->
 				<div class="row">
-					<div class="col-xl-12">
+					<div class="col-xl-9">
+                        <!-- Row -->
 						<div class="row">
+                            <!--column-->
 							<div class="col-xl-12">
 								<div class="page-title flex-wrap">
 									<div class="input-group search-area mb-md-0 mb-3">
@@ -1108,132 +1121,605 @@
 											<svg width="15" height="15" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path d="M17.5605 15.4395L13.7527 11.6317C14.5395 10.446 15 9.02625 15 7.5C15 3.3645 11.6355 0 7.5 0C3.3645 0 0 3.3645 0 7.5C0 11.6355 3.3645 15 7.5 15C9.02625 15 10.446 14.5395 11.6317 13.7527L15.4395 17.5605C16.0245 18.1462 16.9755 18.1462 17.5605 17.5605C18.1462 16.9747 18.1462 16.0252 17.5605 15.4395V15.4395ZM2.25 7.5C2.25 4.605 4.605 2.25 7.5 2.25C10.395 2.25 12.75 4.605 12.75 7.5C12.75 10.395 10.395 12.75 7.5 12.75C4.605 12.75 2.25 10.395 2.25 7.5V7.5Z" fill="#01A3FF"/>
 											</svg>
-										</a></span>
+										</a>
+										</span>
 									</div>
-									<div>
-										<select class="image-select bs-select dashboard-select me-3" aria-label="Default">
+									<div class="d-flex align-items-center">
+										<select class="default-select me-3" aria-label="Default">
 											<option selected>Tất cả</option>
 											<option value="1">Đăng ký</option>
 											<option value="2">Đã duyệt</option>
-                                            <option value="3">Từ chối</option>
+											<option value="3">Từ chối</option>
 										</select>
-										<!-- Button trigger modal -->
-										<a href="./add-recruitment.html" class="btn btn-primary" >
-										 + Thêm mới
-                                        </a>
+										
 									</div>
 								</div>
 							</div>
-							<!--column-->
-							<div class="col-xl-12 wow fadeInUp" data-wow-delay="1.5s">
-								<div class="table-responsive full-data">
-                                    <table class="table table-hover table-responsive-sm ">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>ID</th>
-                                                <th>Tên cơ sở</th>
-                                                <th>Địa chỉ</th>
-                                                <th>Người phụ trách</th>
-                                                <th>Tình trạng</th>
-                                                <th class="text-end">Thao tác</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th>1</th>
-                                                <td>Cs123122q31</td>
-                                                <td><span class="badge badge-primary light">Cơ sở Kim Mã</span>
-                                                </td>
-                                                <td>Mr. Thông</td>
-                                                <td>147 đường Thống Nhất, Kim Mã</td>
-                                                <td ><div class="badge light badge-success">Đang hoạt động</div></td>
-                                                <td>
-													<div class="dropdown custom-dropdown float-end">
-														<div class="btn sharp tp-btn " data-bs-toggle="dropdown">
+                            <!--/column-->
+                            <!--column-->
+                            <div class="col-xl-12">
+                                 <!-- Row -->
+                                <div class="row">
+                                    <!--column-->
+                                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                                        <div class="card contact_list text-center">
+                                            <div class="card-body">
+                                                <div class="user-content">
+                                                    <div class="user-info">
+                                                        <div class="user-img">
+                                                            <img src="./images/contacts/1.jpg" alt="" class="avatar avatar-xl">
+                                                        </div>
+                                                        <div class="user-details">
+                                                            <h4 class="user-name mb-0">Dimitres Viga</h4>
+                                                            <p>Giáo viên</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown">
+                                                        <a href="javascript:void(0);" class="btn sharp btn-light" data-bs-toggle="dropdown" aria-expanded="false">
 															<svg width="24" height="6" viewBox="0 0 24 6" fill="none" xmlns="http://www.w3.org/2000/svg">
 																<path d="M12.0012 0.359985C11.6543 0.359985 11.3109 0.428302 10.9904 0.561035C10.67 0.693767 10.3788 0.888317 10.1335 1.13358C9.88829 1.37883 9.69374 1.67 9.56101 1.99044C9.42828 2.31089 9.35996 2.65434 9.35996 3.00119C9.35996 3.34803 9.42828 3.69148 9.56101 4.01193C9.69374 4.33237 9.88829 4.62354 10.1335 4.8688C10.3788 5.11405 10.67 5.3086 10.9904 5.44134C11.3109 5.57407 11.6543 5.64239 12.0012 5.64239C12.7017 5.64223 13.3734 5.36381 13.8686 4.86837C14.3638 4.37294 14.6419 3.70108 14.6418 3.00059C14.6416 2.3001 14.3632 1.62836 13.8677 1.13315C13.3723 0.637942 12.7004 0.359826 12 0.359985H12.0012ZM3.60116 0.359985C3.25431 0.359985 2.91086 0.428302 2.59042 0.561035C2.26997 0.693767 1.97881 0.888317 1.73355 1.13358C1.48829 1.37883 1.29374 1.67 1.16101 1.99044C1.02828 2.31089 0.959961 2.65434 0.959961 3.00119C0.959961 3.34803 1.02828 3.69148 1.16101 4.01193C1.29374 4.33237 1.48829 4.62354 1.73355 4.8688C1.97881 5.11405 2.26997 5.3086 2.59042 5.44134C2.91086 5.57407 3.25431 5.64239 3.60116 5.64239C4.30165 5.64223 4.97339 5.36381 5.4686 4.86837C5.9638 4.37294 6.24192 3.70108 6.24176 3.00059C6.2416 2.3001 5.96318 1.62836 5.46775 1.13315C4.97231 0.637942 4.30045 0.359826 3.59996 0.359985H3.60116ZM20.4012 0.359985C20.0543 0.359985 19.7109 0.428302 19.3904 0.561035C19.07 0.693767 18.7788 0.888317 18.5336 1.13358C18.2883 1.37883 18.0937 1.67 17.961 1.99044C17.8283 2.31089 17.76 2.65434 17.76 3.00119C17.76 3.34803 17.8283 3.69148 17.961 4.01193C18.0937 4.33237 18.2883 4.62354 18.5336 4.8688C18.7788 5.11405 19.07 5.3086 19.3904 5.44134C19.7109 5.57407 20.0543 5.64239 20.4012 5.64239C21.1017 5.64223 21.7734 5.36381 22.2686 4.86837C22.7638 4.37294 23.0419 3.70108 23.0418 3.00059C23.0416 2.3001 22.7632 1.62836 22.2677 1.13315C21.7723 0.637942 21.1005 0.359826 20.4 0.359985H20.4012Z" fill="#A098AE"/>
 															</svg>
-														</div>
-														<div class="dropdown-menu dropdown-menu-end">
-															<a class="dropdown-item" href="./list-facilities-detail.html">Xem chi tiết</a>
-															<a class="dropdown-item" href="javascript:void(0);">Sửa</a>
-															<a class="dropdown-item" href="javascript:void(0);">Xóa</a>
-														</div>
-													</div>
-												</td>
-                                            </tr>
-                                            <tr>
-                                                <th>2</th>
-                                                <td>Cs1432231</td>
-                                                <td><span class="badge badge-primary light">Cơ sở Hà Đông</span>
-                                                </td>
-                                                <td>Mr. Thông</td>
-                                                <td>17 đường Nguyễn Huệ, Hà Đông</td>
-                                                <td ><div class="badge badge-danger">Dừng hoạt động</div></td>
-                                                <td>
-													<div class="dropdown custom-dropdown float-end">
-														<div class="btn sharp tp-btn " data-bs-toggle="dropdown">
-															<svg width="24" height="6" viewBox="0 0 24 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-																<path d="M12.0012 0.359985C11.6543 0.359985 11.3109 0.428302 10.9904 0.561035C10.67 0.693767 10.3788 0.888317 10.1335 1.13358C9.88829 1.37883 9.69374 1.67 9.56101 1.99044C9.42828 2.31089 9.35996 2.65434 9.35996 3.00119C9.35996 3.34803 9.42828 3.69148 9.56101 4.01193C9.69374 4.33237 9.88829 4.62354 10.1335 4.8688C10.3788 5.11405 10.67 5.3086 10.9904 5.44134C11.3109 5.57407 11.6543 5.64239 12.0012 5.64239C12.7017 5.64223 13.3734 5.36381 13.8686 4.86837C14.3638 4.37294 14.6419 3.70108 14.6418 3.00059C14.6416 2.3001 14.3632 1.62836 13.8677 1.13315C13.3723 0.637942 12.7004 0.359826 12 0.359985H12.0012ZM3.60116 0.359985C3.25431 0.359985 2.91086 0.428302 2.59042 0.561035C2.26997 0.693767 1.97881 0.888317 1.73355 1.13358C1.48829 1.37883 1.29374 1.67 1.16101 1.99044C1.02828 2.31089 0.959961 2.65434 0.959961 3.00119C0.959961 3.34803 1.02828 3.69148 1.16101 4.01193C1.29374 4.33237 1.48829 4.62354 1.73355 4.8688C1.97881 5.11405 2.26997 5.3086 2.59042 5.44134C2.91086 5.57407 3.25431 5.64239 3.60116 5.64239C4.30165 5.64223 4.97339 5.36381 5.4686 4.86837C5.9638 4.37294 6.24192 3.70108 6.24176 3.00059C6.2416 2.3001 5.96318 1.62836 5.46775 1.13315C4.97231 0.637942 4.30045 0.359826 3.59996 0.359985H3.60116ZM20.4012 0.359985C20.0543 0.359985 19.7109 0.428302 19.3904 0.561035C19.07 0.693767 18.7788 0.888317 18.5336 1.13358C18.2883 1.37883 18.0937 1.67 17.961 1.99044C17.8283 2.31089 17.76 2.65434 17.76 3.00119C17.76 3.34803 17.8283 3.69148 17.961 4.01193C18.0937 4.33237 18.2883 4.62354 18.5336 4.8688C18.7788 5.11405 19.07 5.3086 19.3904 5.44134C19.7109 5.57407 20.0543 5.64239 20.4012 5.64239C21.1017 5.64223 21.7734 5.36381 22.2686 4.86837C22.7638 4.37294 23.0419 3.70108 23.0418 3.00059C23.0416 2.3001 22.7632 1.62836 22.2677 1.13315C21.7723 0.637942 21.1005 0.359826 20.4 0.359985H20.4012Z" fill="#A098AE"/>
-															</svg>
-														</div>
-														<div class="dropdown-menu dropdown-menu-end">
-															<a class="dropdown-item" href="./list-facilities-detail.html">Xem chi tiết</a>
-															<a class="dropdown-item" href="javascript:void(0);">Sửa</a>
-															<a class="dropdown-item" href="javascript:void(0);">Xóa</a>
-														</div>
-													</div>
-												</td>
-                                            </tr>
-                                            <tr>
-                                                <th>3</th>
-                                                <td>Cs15422q31</td>
-                                                <td><span class="badge badge-primary light">Cơ sở Làng Chài</span>
-                                                </td>
-                                                <td>Mr. Bá</td>
-                                                <td>147 đường Thống Nhất, Làng Chài</td>
-                                                <td ><div class="badge  badge-warning">Tạm dừng</div></td>
-                                                <td>
-													<div class="dropdown custom-dropdown float-end">
-														<div class="btn sharp tp-btn " data-bs-toggle="dropdown">
-															<svg width="24" height="6" viewBox="0 0 24 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-																<path d="M12.0012 0.359985C11.6543 0.359985 11.3109 0.428302 10.9904 0.561035C10.67 0.693767 10.3788 0.888317 10.1335 1.13358C9.88829 1.37883 9.69374 1.67 9.56101 1.99044C9.42828 2.31089 9.35996 2.65434 9.35996 3.00119C9.35996 3.34803 9.42828 3.69148 9.56101 4.01193C9.69374 4.33237 9.88829 4.62354 10.1335 4.8688C10.3788 5.11405 10.67 5.3086 10.9904 5.44134C11.3109 5.57407 11.6543 5.64239 12.0012 5.64239C12.7017 5.64223 13.3734 5.36381 13.8686 4.86837C14.3638 4.37294 14.6419 3.70108 14.6418 3.00059C14.6416 2.3001 14.3632 1.62836 13.8677 1.13315C13.3723 0.637942 12.7004 0.359826 12 0.359985H12.0012ZM3.60116 0.359985C3.25431 0.359985 2.91086 0.428302 2.59042 0.561035C2.26997 0.693767 1.97881 0.888317 1.73355 1.13358C1.48829 1.37883 1.29374 1.67 1.16101 1.99044C1.02828 2.31089 0.959961 2.65434 0.959961 3.00119C0.959961 3.34803 1.02828 3.69148 1.16101 4.01193C1.29374 4.33237 1.48829 4.62354 1.73355 4.8688C1.97881 5.11405 2.26997 5.3086 2.59042 5.44134C2.91086 5.57407 3.25431 5.64239 3.60116 5.64239C4.30165 5.64223 4.97339 5.36381 5.4686 4.86837C5.9638 4.37294 6.24192 3.70108 6.24176 3.00059C6.2416 2.3001 5.96318 1.62836 5.46775 1.13315C4.97231 0.637942 4.30045 0.359826 3.59996 0.359985H3.60116ZM20.4012 0.359985C20.0543 0.359985 19.7109 0.428302 19.3904 0.561035C19.07 0.693767 18.7788 0.888317 18.5336 1.13358C18.2883 1.37883 18.0937 1.67 17.961 1.99044C17.8283 2.31089 17.76 2.65434 17.76 3.00119C17.76 3.34803 17.8283 3.69148 17.961 4.01193C18.0937 4.33237 18.2883 4.62354 18.5336 4.8688C18.7788 5.11405 19.07 5.3086 19.3904 5.44134C19.7109 5.57407 20.0543 5.64239 20.4012 5.64239C21.1017 5.64223 21.7734 5.36381 22.2686 4.86837C22.7638 4.37294 23.0419 3.70108 23.0418 3.00059C23.0416 2.3001 22.7632 1.62836 22.2677 1.13315C21.7723 0.637942 21.1005 0.359826 20.4 0.359985H20.4012Z" fill="#A098AE"/>
-															</svg>
-														</div>
-														<div class="dropdown-menu dropdown-menu-end">
-															<a class="dropdown-item" href="./list-facilities-detail.html">Xem chi tiết</a>
-															<a class="dropdown-item" href="javascript:void(0);">Sửa</a>
-															<a class="dropdown-item" href="javascript:void(0);">Xóa</a>
-														</div>
-													</div>
-												</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                            <a class="dropdown-item" href="javascript:void(0);">Xóa</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Sửa</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="contact-icon">
+                                                   <span class="badge badge-success light">Mathematics</span>
+												   <span class="badge badge-secondary light mx-2">Science</span> 
+												   <span class="badge badge-danger light">Art</span>
+                                                </div>
+												<div class="d-flex align-items-center">
+													<a href="./teacher-detail.html" class="btn  btn-primary btn-sm w-100 me-2"><i class="fa-solid fa-user me-2"></i>Xem chi tiết</a>
+	
+												</div>
+                                            </div>
+                                        </div>
                                     </div>
-							</div>
+                                    <!--/column-->
+                                    <!--column-->
+                                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                                        <div class="card contact_list text-center">
+                                             <div class="card-body">
+                                                <div class="user-content">
+                                                    <div class="user-info">
+                                                        <div class="user-img">
+                                                            <img src="./images/contacts/2.jpg" alt="" class="avatar avatar-xl">
+                                                        </div>
+                                                        <div class="user-details">
+                                                            <h4 class="user-name mb-0">Dimitres Viga</h4>
+                                                            <p>Trợ giảng</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown">
+                                                        <a href="javascript:void(0);" class="btn sharp btn-light" data-bs-toggle="dropdown" aria-expanded="false">
+															<svg width="24" height="6" viewBox="0 0 24 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+																<path d="M12.0012 0.359985C11.6543 0.359985 11.3109 0.428302 10.9904 0.561035C10.67 0.693767 10.3788 0.888317 10.1335 1.13358C9.88829 1.37883 9.69374 1.67 9.56101 1.99044C9.42828 2.31089 9.35996 2.65434 9.35996 3.00119C9.35996 3.34803 9.42828 3.69148 9.56101 4.01193C9.69374 4.33237 9.88829 4.62354 10.1335 4.8688C10.3788 5.11405 10.67 5.3086 10.9904 5.44134C11.3109 5.57407 11.6543 5.64239 12.0012 5.64239C12.7017 5.64223 13.3734 5.36381 13.8686 4.86837C14.3638 4.37294 14.6419 3.70108 14.6418 3.00059C14.6416 2.3001 14.3632 1.62836 13.8677 1.13315C13.3723 0.637942 12.7004 0.359826 12 0.359985H12.0012ZM3.60116 0.359985C3.25431 0.359985 2.91086 0.428302 2.59042 0.561035C2.26997 0.693767 1.97881 0.888317 1.73355 1.13358C1.48829 1.37883 1.29374 1.67 1.16101 1.99044C1.02828 2.31089 0.959961 2.65434 0.959961 3.00119C0.959961 3.34803 1.02828 3.69148 1.16101 4.01193C1.29374 4.33237 1.48829 4.62354 1.73355 4.8688C1.97881 5.11405 2.26997 5.3086 2.59042 5.44134C2.91086 5.57407 3.25431 5.64239 3.60116 5.64239C4.30165 5.64223 4.97339 5.36381 5.4686 4.86837C5.9638 4.37294 6.24192 3.70108 6.24176 3.00059C6.2416 2.3001 5.96318 1.62836 5.46775 1.13315C4.97231 0.637942 4.30045 0.359826 3.59996 0.359985H3.60116ZM20.4012 0.359985C20.0543 0.359985 19.7109 0.428302 19.3904 0.561035C19.07 0.693767 18.7788 0.888317 18.5336 1.13358C18.2883 1.37883 18.0937 1.67 17.961 1.99044C17.8283 2.31089 17.76 2.65434 17.76 3.00119C17.76 3.34803 17.8283 3.69148 17.961 4.01193C18.0937 4.33237 18.2883 4.62354 18.5336 4.8688C18.7788 5.11405 19.07 5.3086 19.3904 5.44134C19.7109 5.57407 20.0543 5.64239 20.4012 5.64239C21.1017 5.64223 21.7734 5.36381 22.2686 4.86837C22.7638 4.37294 23.0419 3.70108 23.0418 3.00059C23.0416 2.3001 22.7632 1.62836 22.2677 1.13315C21.7723 0.637942 21.1005 0.359826 20.4 0.359985H20.4012Z" fill="#A098AE"/>
+															</svg>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                            <a class="dropdown-item" href="javascript:void(0);">Xóa</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Sửa</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="contact-icon">
+                                                   <span class="badge badge-success light">Mathematics</span>
+												   <span class="badge badge-secondary light mx-2">Science</span> 
+												   <span class="badge badge-danger light">Art</span>
+                                                </div>
+												<div class="d-flex align-items-center">
+													<a href="./teacher-detail.html" class="btn  btn-primary btn-sm w-100 me-2"><i class="fa-solid fa-user me-2"></i>Xem chi tiết</a>
+	
+												</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/column-->
+                                    <!--column-->
+                                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                                        <div class="card contact_list text-center">
+											<div class="card-body">
+                                                <div class="user-content">
+                                                    <div class="user-info">
+                                                        <div class="user-img">
+                                                            <img src="./images/contacts/3.jpg" alt="" class="avatar avatar-xl">
+                                                        </div>
+                                                        <div class="user-details">
+                                                            <h4 class="user-name mb-0">Dimitres Viga</h4>
+                                                            <p>Giáo viên</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown">
+                                                        <a href="javascript:void(0);" class="btn sharp btn-light" data-bs-toggle="dropdown" aria-expanded="false">
+															<svg width="24" height="6" viewBox="0 0 24 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+																<path d="M12.0012 0.359985C11.6543 0.359985 11.3109 0.428302 10.9904 0.561035C10.67 0.693767 10.3788 0.888317 10.1335 1.13358C9.88829 1.37883 9.69374 1.67 9.56101 1.99044C9.42828 2.31089 9.35996 2.65434 9.35996 3.00119C9.35996 3.34803 9.42828 3.69148 9.56101 4.01193C9.69374 4.33237 9.88829 4.62354 10.1335 4.8688C10.3788 5.11405 10.67 5.3086 10.9904 5.44134C11.3109 5.57407 11.6543 5.64239 12.0012 5.64239C12.7017 5.64223 13.3734 5.36381 13.8686 4.86837C14.3638 4.37294 14.6419 3.70108 14.6418 3.00059C14.6416 2.3001 14.3632 1.62836 13.8677 1.13315C13.3723 0.637942 12.7004 0.359826 12 0.359985H12.0012ZM3.60116 0.359985C3.25431 0.359985 2.91086 0.428302 2.59042 0.561035C2.26997 0.693767 1.97881 0.888317 1.73355 1.13358C1.48829 1.37883 1.29374 1.67 1.16101 1.99044C1.02828 2.31089 0.959961 2.65434 0.959961 3.00119C0.959961 3.34803 1.02828 3.69148 1.16101 4.01193C1.29374 4.33237 1.48829 4.62354 1.73355 4.8688C1.97881 5.11405 2.26997 5.3086 2.59042 5.44134C2.91086 5.57407 3.25431 5.64239 3.60116 5.64239C4.30165 5.64223 4.97339 5.36381 5.4686 4.86837C5.9638 4.37294 6.24192 3.70108 6.24176 3.00059C6.2416 2.3001 5.96318 1.62836 5.46775 1.13315C4.97231 0.637942 4.30045 0.359826 3.59996 0.359985H3.60116ZM20.4012 0.359985C20.0543 0.359985 19.7109 0.428302 19.3904 0.561035C19.07 0.693767 18.7788 0.888317 18.5336 1.13358C18.2883 1.37883 18.0937 1.67 17.961 1.99044C17.8283 2.31089 17.76 2.65434 17.76 3.00119C17.76 3.34803 17.8283 3.69148 17.961 4.01193C18.0937 4.33237 18.2883 4.62354 18.5336 4.8688C18.7788 5.11405 19.07 5.3086 19.3904 5.44134C19.7109 5.57407 20.0543 5.64239 20.4012 5.64239C21.1017 5.64223 21.7734 5.36381 22.2686 4.86837C22.7638 4.37294 23.0419 3.70108 23.0418 3.00059C23.0416 2.3001 22.7632 1.62836 22.2677 1.13315C21.7723 0.637942 21.1005 0.359826 20.4 0.359985H20.4012Z" fill="#A098AE"/>
+															</svg>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                            <a class="dropdown-item" href="javascript:void(0);">Xóa</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Sửa</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="contact-icon">
+                                                   <span class="badge badge-success light">Mathematics</span>
+												   <span class="badge badge-secondary light mx-2">Science</span> 
+												   <span class="badge badge-danger light">Art</span>
+                                                </div>
+												<div class="d-flex align-items-center">
+													<a href="./teacher-detail.html" class="btn  btn-primary btn-sm w-100 me-2"><i class="fa-solid fa-user me-2"></i>Xem chi tiết</a>
+	
+												</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/column-->
+									<!--column-->
+									<div class="col-xl-3 col-lg-4 col-sm-6">
+                                        <div class="card contact_list text-center">
+                                          <div class="card-body">
+                                                <div class="user-content">
+                                                    <div class="user-info">
+                                                        <div class="user-img">
+                                                            <img src="./images/contacts/4.jpg" alt="" class="avatar avatar-xl">
+                                                        </div>
+                                                        <div class="user-details">
+                                                            <h4 class="user-name mb-0">Dimitres Viga</h4>
+                                                            <p>Giáo viên/Trợ giảng</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown">
+                                                        <a href="javascript:void(0);" class="btn sharp btn-light" data-bs-toggle="dropdown" aria-expanded="false">
+															<svg width="24" height="6" viewBox="0 0 24 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+																<path d="M12.0012 0.359985C11.6543 0.359985 11.3109 0.428302 10.9904 0.561035C10.67 0.693767 10.3788 0.888317 10.1335 1.13358C9.88829 1.37883 9.69374 1.67 9.56101 1.99044C9.42828 2.31089 9.35996 2.65434 9.35996 3.00119C9.35996 3.34803 9.42828 3.69148 9.56101 4.01193C9.69374 4.33237 9.88829 4.62354 10.1335 4.8688C10.3788 5.11405 10.67 5.3086 10.9904 5.44134C11.3109 5.57407 11.6543 5.64239 12.0012 5.64239C12.7017 5.64223 13.3734 5.36381 13.8686 4.86837C14.3638 4.37294 14.6419 3.70108 14.6418 3.00059C14.6416 2.3001 14.3632 1.62836 13.8677 1.13315C13.3723 0.637942 12.7004 0.359826 12 0.359985H12.0012ZM3.60116 0.359985C3.25431 0.359985 2.91086 0.428302 2.59042 0.561035C2.26997 0.693767 1.97881 0.888317 1.73355 1.13358C1.48829 1.37883 1.29374 1.67 1.16101 1.99044C1.02828 2.31089 0.959961 2.65434 0.959961 3.00119C0.959961 3.34803 1.02828 3.69148 1.16101 4.01193C1.29374 4.33237 1.48829 4.62354 1.73355 4.8688C1.97881 5.11405 2.26997 5.3086 2.59042 5.44134C2.91086 5.57407 3.25431 5.64239 3.60116 5.64239C4.30165 5.64223 4.97339 5.36381 5.4686 4.86837C5.9638 4.37294 6.24192 3.70108 6.24176 3.00059C6.2416 2.3001 5.96318 1.62836 5.46775 1.13315C4.97231 0.637942 4.30045 0.359826 3.59996 0.359985H3.60116ZM20.4012 0.359985C20.0543 0.359985 19.7109 0.428302 19.3904 0.561035C19.07 0.693767 18.7788 0.888317 18.5336 1.13358C18.2883 1.37883 18.0937 1.67 17.961 1.99044C17.8283 2.31089 17.76 2.65434 17.76 3.00119C17.76 3.34803 17.8283 3.69148 17.961 4.01193C18.0937 4.33237 18.2883 4.62354 18.5336 4.8688C18.7788 5.11405 19.07 5.3086 19.3904 5.44134C19.7109 5.57407 20.0543 5.64239 20.4012 5.64239C21.1017 5.64223 21.7734 5.36381 22.2686 4.86837C22.7638 4.37294 23.0419 3.70108 23.0418 3.00059C23.0416 2.3001 22.7632 1.62836 22.2677 1.13315C21.7723 0.637942 21.1005 0.359826 20.4 0.359985H20.4012Z" fill="#A098AE"/>
+															</svg>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                            <a class="dropdown-item" href="javascript:void(0);">Xóa</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Sửa</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="contact-icon">
+                                                   <span class="badge badge-success light">Mathematics</span>
+												   <span class="badge badge-secondary light mx-2">Science</span> 
+												   <span class="badge badge-danger light">Art</span>
+                                                </div>
+												<div class="d-flex align-items-center">
+													<a href="./teacher-detail.html" class="btn  btn-primary btn-sm w-100 me-2"><i class="fa-solid fa-user me-2"></i>Xem chi tiết</a>
+	
+												</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/column-->
+                                    <!--column-->
+                                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                                        <div class="card contact_list text-center">
+                                            <div class="card-body">
+                                                <div class="user-content">
+                                                    <div class="user-info">
+                                                        <div class="user-img">
+                                                            <img src="./images/contacts/5.jpg" alt="" class="avatar avatar-xl">
+                                                        </div>
+                                                        <div class="user-details">
+                                                            <h4 class="user-name mb-0">Dimitres Viga</h4>
+                                                            <p>Giáo viên</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown">
+                                                        <a href="javascript:void(0);" class="btn sharp btn-light" data-bs-toggle="dropdown" aria-expanded="false">
+															<svg width="24" height="6" viewBox="0 0 24 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+																<path d="M12.0012 0.359985C11.6543 0.359985 11.3109 0.428302 10.9904 0.561035C10.67 0.693767 10.3788 0.888317 10.1335 1.13358C9.88829 1.37883 9.69374 1.67 9.56101 1.99044C9.42828 2.31089 9.35996 2.65434 9.35996 3.00119C9.35996 3.34803 9.42828 3.69148 9.56101 4.01193C9.69374 4.33237 9.88829 4.62354 10.1335 4.8688C10.3788 5.11405 10.67 5.3086 10.9904 5.44134C11.3109 5.57407 11.6543 5.64239 12.0012 5.64239C12.7017 5.64223 13.3734 5.36381 13.8686 4.86837C14.3638 4.37294 14.6419 3.70108 14.6418 3.00059C14.6416 2.3001 14.3632 1.62836 13.8677 1.13315C13.3723 0.637942 12.7004 0.359826 12 0.359985H12.0012ZM3.60116 0.359985C3.25431 0.359985 2.91086 0.428302 2.59042 0.561035C2.26997 0.693767 1.97881 0.888317 1.73355 1.13358C1.48829 1.37883 1.29374 1.67 1.16101 1.99044C1.02828 2.31089 0.959961 2.65434 0.959961 3.00119C0.959961 3.34803 1.02828 3.69148 1.16101 4.01193C1.29374 4.33237 1.48829 4.62354 1.73355 4.8688C1.97881 5.11405 2.26997 5.3086 2.59042 5.44134C2.91086 5.57407 3.25431 5.64239 3.60116 5.64239C4.30165 5.64223 4.97339 5.36381 5.4686 4.86837C5.9638 4.37294 6.24192 3.70108 6.24176 3.00059C6.2416 2.3001 5.96318 1.62836 5.46775 1.13315C4.97231 0.637942 4.30045 0.359826 3.59996 0.359985H3.60116ZM20.4012 0.359985C20.0543 0.359985 19.7109 0.428302 19.3904 0.561035C19.07 0.693767 18.7788 0.888317 18.5336 1.13358C18.2883 1.37883 18.0937 1.67 17.961 1.99044C17.8283 2.31089 17.76 2.65434 17.76 3.00119C17.76 3.34803 17.8283 3.69148 17.961 4.01193C18.0937 4.33237 18.2883 4.62354 18.5336 4.8688C18.7788 5.11405 19.07 5.3086 19.3904 5.44134C19.7109 5.57407 20.0543 5.64239 20.4012 5.64239C21.1017 5.64223 21.7734 5.36381 22.2686 4.86837C22.7638 4.37294 23.0419 3.70108 23.0418 3.00059C23.0416 2.3001 22.7632 1.62836 22.2677 1.13315C21.7723 0.637942 21.1005 0.359826 20.4 0.359985H20.4012Z" fill="#A098AE"/>
+															</svg>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                            <a class="dropdown-item" href="javascript:void(0);">Xóa</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Sửa</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="contact-icon">
+                                                   <span class="badge badge-success light">Mathematics</span>
+												   <span class="badge badge-secondary light mx-2">Science</span> 
+												   <span class="badge badge-danger light">Art</span>
+                                                </div>
+												<div class="d-flex align-items-center">
+													<a href="./teacher-detail.html" class="btn  btn-primary btn-sm w-100 me-2"><i class="fa-solid fa-user me-2"></i>Xem chi tiết</a>
+												</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/column-->
+									<!--column-->
+									<div class="col-xl-3 col-lg-4 col-sm-6">
+                                        <div class="card contact_list text-center">
+                                          <div class="card-body">
+                                                <div class="user-content">
+                                                    <div class="user-info">
+                                                        <div class="user-img">
+                                                            <img src="./images/contacts/6.jpg" alt="" class="avatar avatar-xl">
+                                                        </div>
+                                                        <div class="user-details">
+                                                            <h4 class="user-name mb-0">Dimitres Viga</h4>
+                                                            <p>Trợ giản</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown">
+                                                        <a href="javascript:void(0);" class="btn sharp btn-light" data-bs-toggle="dropdown" aria-expanded="false">
+															<svg width="24" height="6" viewBox="0 0 24 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+																<path d="M12.0012 0.359985C11.6543 0.359985 11.3109 0.428302 10.9904 0.561035C10.67 0.693767 10.3788 0.888317 10.1335 1.13358C9.88829 1.37883 9.69374 1.67 9.56101 1.99044C9.42828 2.31089 9.35996 2.65434 9.35996 3.00119C9.35996 3.34803 9.42828 3.69148 9.56101 4.01193C9.69374 4.33237 9.88829 4.62354 10.1335 4.8688C10.3788 5.11405 10.67 5.3086 10.9904 5.44134C11.3109 5.57407 11.6543 5.64239 12.0012 5.64239C12.7017 5.64223 13.3734 5.36381 13.8686 4.86837C14.3638 4.37294 14.6419 3.70108 14.6418 3.00059C14.6416 2.3001 14.3632 1.62836 13.8677 1.13315C13.3723 0.637942 12.7004 0.359826 12 0.359985H12.0012ZM3.60116 0.359985C3.25431 0.359985 2.91086 0.428302 2.59042 0.561035C2.26997 0.693767 1.97881 0.888317 1.73355 1.13358C1.48829 1.37883 1.29374 1.67 1.16101 1.99044C1.02828 2.31089 0.959961 2.65434 0.959961 3.00119C0.959961 3.34803 1.02828 3.69148 1.16101 4.01193C1.29374 4.33237 1.48829 4.62354 1.73355 4.8688C1.97881 5.11405 2.26997 5.3086 2.59042 5.44134C2.91086 5.57407 3.25431 5.64239 3.60116 5.64239C4.30165 5.64223 4.97339 5.36381 5.4686 4.86837C5.9638 4.37294 6.24192 3.70108 6.24176 3.00059C6.2416 2.3001 5.96318 1.62836 5.46775 1.13315C4.97231 0.637942 4.30045 0.359826 3.59996 0.359985H3.60116ZM20.4012 0.359985C20.0543 0.359985 19.7109 0.428302 19.3904 0.561035C19.07 0.693767 18.7788 0.888317 18.5336 1.13358C18.2883 1.37883 18.0937 1.67 17.961 1.99044C17.8283 2.31089 17.76 2.65434 17.76 3.00119C17.76 3.34803 17.8283 3.69148 17.961 4.01193C18.0937 4.33237 18.2883 4.62354 18.5336 4.8688C18.7788 5.11405 19.07 5.3086 19.3904 5.44134C19.7109 5.57407 20.0543 5.64239 20.4012 5.64239C21.1017 5.64223 21.7734 5.36381 22.2686 4.86837C22.7638 4.37294 23.0419 3.70108 23.0418 3.00059C23.0416 2.3001 22.7632 1.62836 22.2677 1.13315C21.7723 0.637942 21.1005 0.359826 20.4 0.359985H20.4012Z" fill="#A098AE"/>
+															</svg>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                            <a class="dropdown-item" href="javascript:void(0);">Xóa</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Sửa</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="contact-icon">
+                                                   <span class="badge badge-success light">Mathematics</span>
+												   <span class="badge badge-secondary light mx-2">Science</span> 
+												   <span class="badge badge-danger light">Art</span>
+                                                </div>
+												<div class="d-flex align-items-center">
+													<a href="./teacher-detail.html" class="btn  btn-primary btn-sm w-100 me-2"><i class="fa-solid fa-user me-2"></i>Xem chi tiết</a>
+	
+												</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/column-->
+                                    <!--column-->
+                                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                                        <div class="card contact_list text-center">
+                                          <div class="card-body">
+                                                <div class="user-content">
+                                                    <div class="user-info">
+                                                        <div class="user-img">
+                                                            <img src="./images/contacts/7.jpg" alt="" class="avatar avatar-xl">
+                                                        </div>
+                                                        <div class="user-details">
+                                                            <h4 class="user-name mb-0">Dimitres Viga</h4>
+                                                            <p>Trợ giảng</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown">
+                                                        <a href="javascript:void(0);" class="btn sharp btn-light" data-bs-toggle="dropdown" aria-expanded="false">
+															<svg width="24" height="6" viewBox="0 0 24 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+																<path d="M12.0012 0.359985C11.6543 0.359985 11.3109 0.428302 10.9904 0.561035C10.67 0.693767 10.3788 0.888317 10.1335 1.13358C9.88829 1.37883 9.69374 1.67 9.56101 1.99044C9.42828 2.31089 9.35996 2.65434 9.35996 3.00119C9.35996 3.34803 9.42828 3.69148 9.56101 4.01193C9.69374 4.33237 9.88829 4.62354 10.1335 4.8688C10.3788 5.11405 10.67 5.3086 10.9904 5.44134C11.3109 5.57407 11.6543 5.64239 12.0012 5.64239C12.7017 5.64223 13.3734 5.36381 13.8686 4.86837C14.3638 4.37294 14.6419 3.70108 14.6418 3.00059C14.6416 2.3001 14.3632 1.62836 13.8677 1.13315C13.3723 0.637942 12.7004 0.359826 12 0.359985H12.0012ZM3.60116 0.359985C3.25431 0.359985 2.91086 0.428302 2.59042 0.561035C2.26997 0.693767 1.97881 0.888317 1.73355 1.13358C1.48829 1.37883 1.29374 1.67 1.16101 1.99044C1.02828 2.31089 0.959961 2.65434 0.959961 3.00119C0.959961 3.34803 1.02828 3.69148 1.16101 4.01193C1.29374 4.33237 1.48829 4.62354 1.73355 4.8688C1.97881 5.11405 2.26997 5.3086 2.59042 5.44134C2.91086 5.57407 3.25431 5.64239 3.60116 5.64239C4.30165 5.64223 4.97339 5.36381 5.4686 4.86837C5.9638 4.37294 6.24192 3.70108 6.24176 3.00059C6.2416 2.3001 5.96318 1.62836 5.46775 1.13315C4.97231 0.637942 4.30045 0.359826 3.59996 0.359985H3.60116ZM20.4012 0.359985C20.0543 0.359985 19.7109 0.428302 19.3904 0.561035C19.07 0.693767 18.7788 0.888317 18.5336 1.13358C18.2883 1.37883 18.0937 1.67 17.961 1.99044C17.8283 2.31089 17.76 2.65434 17.76 3.00119C17.76 3.34803 17.8283 3.69148 17.961 4.01193C18.0937 4.33237 18.2883 4.62354 18.5336 4.8688C18.7788 5.11405 19.07 5.3086 19.3904 5.44134C19.7109 5.57407 20.0543 5.64239 20.4012 5.64239C21.1017 5.64223 21.7734 5.36381 22.2686 4.86837C22.7638 4.37294 23.0419 3.70108 23.0418 3.00059C23.0416 2.3001 22.7632 1.62836 22.2677 1.13315C21.7723 0.637942 21.1005 0.359826 20.4 0.359985H20.4012Z" fill="#A098AE"/>
+															</svg>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                            <a class="dropdown-item" href="javascript:void(0);">Xóa</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Sửa</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="contact-icon">
+                                                   <span class="badge badge-success light">Mathematics</span>
+												   <span class="badge badge-secondary light mx-2">Science</span> 
+												   <span class="badge badge-danger light">Art</span>
+                                                </div>
+												<div class="d-flex align-items-center">
+													<a href="./teacher-detail.html" class="btn  btn-primary btn-sm w-100 me-2"><i class="fa-solid fa-user me-2"></i>Xem chi tiết</a>
+	
+												</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/column-->
+									<!--column-->
+									<div class="col-xl-3 col-lg-4 col-sm-6">
+                                        <div class="card contact_list text-center">
+                                          <div class="card-body">
+                                                <div class="user-content">
+                                                    <div class="user-info">
+                                                        <div class="user-img">
+                                                            <img src="./images/contacts/8.jpg" alt="" class="avatar avatar-xl">
+                                                        </div>
+                                                        <div class="user-details">
+                                                            <h4 class="user-name mb-0">Dimitres Viga</h4>
+                                                            <p>Giáo viên</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown">
+                                                        <a href="javascript:void(0);" class="btn sharp btn-light" data-bs-toggle="dropdown" aria-expanded="false">
+															<svg width="24" height="6" viewBox="0 0 24 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+																<path d="M12.0012 0.359985C11.6543 0.359985 11.3109 0.428302 10.9904 0.561035C10.67 0.693767 10.3788 0.888317 10.1335 1.13358C9.88829 1.37883 9.69374 1.67 9.56101 1.99044C9.42828 2.31089 9.35996 2.65434 9.35996 3.00119C9.35996 3.34803 9.42828 3.69148 9.56101 4.01193C9.69374 4.33237 9.88829 4.62354 10.1335 4.8688C10.3788 5.11405 10.67 5.3086 10.9904 5.44134C11.3109 5.57407 11.6543 5.64239 12.0012 5.64239C12.7017 5.64223 13.3734 5.36381 13.8686 4.86837C14.3638 4.37294 14.6419 3.70108 14.6418 3.00059C14.6416 2.3001 14.3632 1.62836 13.8677 1.13315C13.3723 0.637942 12.7004 0.359826 12 0.359985H12.0012ZM3.60116 0.359985C3.25431 0.359985 2.91086 0.428302 2.59042 0.561035C2.26997 0.693767 1.97881 0.888317 1.73355 1.13358C1.48829 1.37883 1.29374 1.67 1.16101 1.99044C1.02828 2.31089 0.959961 2.65434 0.959961 3.00119C0.959961 3.34803 1.02828 3.69148 1.16101 4.01193C1.29374 4.33237 1.48829 4.62354 1.73355 4.8688C1.97881 5.11405 2.26997 5.3086 2.59042 5.44134C2.91086 5.57407 3.25431 5.64239 3.60116 5.64239C4.30165 5.64223 4.97339 5.36381 5.4686 4.86837C5.9638 4.37294 6.24192 3.70108 6.24176 3.00059C6.2416 2.3001 5.96318 1.62836 5.46775 1.13315C4.97231 0.637942 4.30045 0.359826 3.59996 0.359985H3.60116ZM20.4012 0.359985C20.0543 0.359985 19.7109 0.428302 19.3904 0.561035C19.07 0.693767 18.7788 0.888317 18.5336 1.13358C18.2883 1.37883 18.0937 1.67 17.961 1.99044C17.8283 2.31089 17.76 2.65434 17.76 3.00119C17.76 3.34803 17.8283 3.69148 17.961 4.01193C18.0937 4.33237 18.2883 4.62354 18.5336 4.8688C18.7788 5.11405 19.07 5.3086 19.3904 5.44134C19.7109 5.57407 20.0543 5.64239 20.4012 5.64239C21.1017 5.64223 21.7734 5.36381 22.2686 4.86837C22.7638 4.37294 23.0419 3.70108 23.0418 3.00059C23.0416 2.3001 22.7632 1.62836 22.2677 1.13315C21.7723 0.637942 21.1005 0.359826 20.4 0.359985H20.4012Z" fill="#A098AE"/>
+															</svg>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                            <a class="dropdown-item" href="javascript:void(0);">Xóa</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Sửa</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="contact-icon">
+                                                   <span class="badge badge-success light">Mathematics</span>
+												   <span class="badge badge-secondary light mx-2">Science</span> 
+												   <span class="badge badge-danger light">Art</span>
+                                                </div>
+												<div class="d-flex align-items-center">
+													<a href="./teacher-detail.html" class="btn  btn-primary btn-sm w-100 me-2"><i class="fa-solid fa-user me-2"></i>Xem chi tiết</a>
+	
+												</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/column-->
+                                    <!--column-->
+                                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                                        <div class="card contact_list text-center">
+                                           <div class="card-body">
+                                                <div class="user-content">
+                                                    <div class="user-info">
+                                                        <div class="user-img">
+                                                            <img src="./images/contacts/9.jpg" alt="" class="avatar avatar-xl">
+                                                        </div>
+                                                        <div class="user-details">
+                                                            <h4 class="user-name mb-0">Dimitres Viga</h4>
+                                                            <p>Giáo viên/Trợ giảng</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown">
+                                                        <a href="javascript:void(0);" class="btn sharp btn-light" data-bs-toggle="dropdown" aria-expanded="false">
+															<svg width="24" height="6" viewBox="0 0 24 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+																<path d="M12.0012 0.359985C11.6543 0.359985 11.3109 0.428302 10.9904 0.561035C10.67 0.693767 10.3788 0.888317 10.1335 1.13358C9.88829 1.37883 9.69374 1.67 9.56101 1.99044C9.42828 2.31089 9.35996 2.65434 9.35996 3.00119C9.35996 3.34803 9.42828 3.69148 9.56101 4.01193C9.69374 4.33237 9.88829 4.62354 10.1335 4.8688C10.3788 5.11405 10.67 5.3086 10.9904 5.44134C11.3109 5.57407 11.6543 5.64239 12.0012 5.64239C12.7017 5.64223 13.3734 5.36381 13.8686 4.86837C14.3638 4.37294 14.6419 3.70108 14.6418 3.00059C14.6416 2.3001 14.3632 1.62836 13.8677 1.13315C13.3723 0.637942 12.7004 0.359826 12 0.359985H12.0012ZM3.60116 0.359985C3.25431 0.359985 2.91086 0.428302 2.59042 0.561035C2.26997 0.693767 1.97881 0.888317 1.73355 1.13358C1.48829 1.37883 1.29374 1.67 1.16101 1.99044C1.02828 2.31089 0.959961 2.65434 0.959961 3.00119C0.959961 3.34803 1.02828 3.69148 1.16101 4.01193C1.29374 4.33237 1.48829 4.62354 1.73355 4.8688C1.97881 5.11405 2.26997 5.3086 2.59042 5.44134C2.91086 5.57407 3.25431 5.64239 3.60116 5.64239C4.30165 5.64223 4.97339 5.36381 5.4686 4.86837C5.9638 4.37294 6.24192 3.70108 6.24176 3.00059C6.2416 2.3001 5.96318 1.62836 5.46775 1.13315C4.97231 0.637942 4.30045 0.359826 3.59996 0.359985H3.60116ZM20.4012 0.359985C20.0543 0.359985 19.7109 0.428302 19.3904 0.561035C19.07 0.693767 18.7788 0.888317 18.5336 1.13358C18.2883 1.37883 18.0937 1.67 17.961 1.99044C17.8283 2.31089 17.76 2.65434 17.76 3.00119C17.76 3.34803 17.8283 3.69148 17.961 4.01193C18.0937 4.33237 18.2883 4.62354 18.5336 4.8688C18.7788 5.11405 19.07 5.3086 19.3904 5.44134C19.7109 5.57407 20.0543 5.64239 20.4012 5.64239C21.1017 5.64223 21.7734 5.36381 22.2686 4.86837C22.7638 4.37294 23.0419 3.70108 23.0418 3.00059C23.0416 2.3001 22.7632 1.62836 22.2677 1.13315C21.7723 0.637942 21.1005 0.359826 20.4 0.359985H20.4012Z" fill="#A098AE"/>
+															</svg>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                            <a class="dropdown-item" href="javascript:void(0);">Xóa</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Sửa</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="contact-icon">
+                                                   <span class="badge badge-success light">Mathematics</span>
+												   <span class="badge badge-secondary light mx-2">Science</span> 
+												   <span class="badge badge-danger light">Art</span>
+                                                </div>
+												<div class="d-flex align-items-center">
+													<a href="javascript:void(0);" class="btn  btn-primary btn-sm w-100 me-2"><i class="fa-solid fa-user me-2"></i>Xem chi tiết</a>												</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/column-->
+									<!--column--> 
+									<div class="col-xl-3 col-lg-4 col-sm-6">
+                                        <div class="card contact_list text-center">
+                                            <div class="card-body">
+                                                <div class="user-content">
+                                                    <div class="user-info">
+                                                        <div class="user-img">
+                                                            <img src="./images/contacts/10.jpg" alt="" class="avatar avatar-xl">
+                                                        </div>
+                                                        <div class="user-details">
+                                                            <h4 class="user-name mb-0">Dimitres Viga</h4>
+                                                            <p>Trợ giảng</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown">
+                                                        <a href="javascript:void(0);" class="btn sharp btn-light" data-bs-toggle="dropdown" aria-expanded="false">
+															<svg width="24" height="6" viewBox="0 0 24 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+																<path d="M12.0012 0.359985C11.6543 0.359985 11.3109 0.428302 10.9904 0.561035C10.67 0.693767 10.3788 0.888317 10.1335 1.13358C9.88829 1.37883 9.69374 1.67 9.56101 1.99044C9.42828 2.31089 9.35996 2.65434 9.35996 3.00119C9.35996 3.34803 9.42828 3.69148 9.56101 4.01193C9.69374 4.33237 9.88829 4.62354 10.1335 4.8688C10.3788 5.11405 10.67 5.3086 10.9904 5.44134C11.3109 5.57407 11.6543 5.64239 12.0012 5.64239C12.7017 5.64223 13.3734 5.36381 13.8686 4.86837C14.3638 4.37294 14.6419 3.70108 14.6418 3.00059C14.6416 2.3001 14.3632 1.62836 13.8677 1.13315C13.3723 0.637942 12.7004 0.359826 12 0.359985H12.0012ZM3.60116 0.359985C3.25431 0.359985 2.91086 0.428302 2.59042 0.561035C2.26997 0.693767 1.97881 0.888317 1.73355 1.13358C1.48829 1.37883 1.29374 1.67 1.16101 1.99044C1.02828 2.31089 0.959961 2.65434 0.959961 3.00119C0.959961 3.34803 1.02828 3.69148 1.16101 4.01193C1.29374 4.33237 1.48829 4.62354 1.73355 4.8688C1.97881 5.11405 2.26997 5.3086 2.59042 5.44134C2.91086 5.57407 3.25431 5.64239 3.60116 5.64239C4.30165 5.64223 4.97339 5.36381 5.4686 4.86837C5.9638 4.37294 6.24192 3.70108 6.24176 3.00059C6.2416 2.3001 5.96318 1.62836 5.46775 1.13315C4.97231 0.637942 4.30045 0.359826 3.59996 0.359985H3.60116ZM20.4012 0.359985C20.0543 0.359985 19.7109 0.428302 19.3904 0.561035C19.07 0.693767 18.7788 0.888317 18.5336 1.13358C18.2883 1.37883 18.0937 1.67 17.961 1.99044C17.8283 2.31089 17.76 2.65434 17.76 3.00119C17.76 3.34803 17.8283 3.69148 17.961 4.01193C18.0937 4.33237 18.2883 4.62354 18.5336 4.8688C18.7788 5.11405 19.07 5.3086 19.3904 5.44134C19.7109 5.57407 20.0543 5.64239 20.4012 5.64239C21.1017 5.64223 21.7734 5.36381 22.2686 4.86837C22.7638 4.37294 23.0419 3.70108 23.0418 3.00059C23.0416 2.3001 22.7632 1.62836 22.2677 1.13315C21.7723 0.637942 21.1005 0.359826 20.4 0.359985H20.4012Z" fill="#A098AE"/>
+															</svg>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                            <a class="dropdown-item" href="javascript:void(0);">Xóa</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Sửa</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="contact-icon">
+                                                   <span class="badge badge-success light">Mathematics</span>
+												   <span class="badge badge-secondary light mx-2">Science</span> 
+												   <span class="badge badge-danger light">Art</span>
+                                                </div>
+												<div class="d-flex align-items-center">
+													<a href="./teacher-detail.html" class="btn  btn-primary btn-sm w-100 me-2"><i class="fa-solid fa-user me-2"></i>Xem chi tiết</a>
+	
+												</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/column-->
+									<!--column-->
+									<div class="col-xl-3 col-lg-4 col-sm-6">
+                                        <div class="card contact_list text-center">
+                                           <div class="card-body">
+                                                <div class="user-content">
+                                                    <div class="user-info">
+                                                        <div class="user-img">
+                                                            <img src="./images/contacts/11.jpg" alt="" class="avatar avatar-xl">
+                                                        </div>
+                                                        <div class="user-details">
+                                                            <h4 class="user-name mb-0">Dimitres Viga</h4>
+                                                            <p>Giáo viên</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown">
+                                                        <a href="javascript:void(0);" class="btn sharp btn-light" data-bs-toggle="dropdown" aria-expanded="false">
+															<svg width="24" height="6" viewBox="0 0 24 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+																<path d="M12.0012 0.359985C11.6543 0.359985 11.3109 0.428302 10.9904 0.561035C10.67 0.693767 10.3788 0.888317 10.1335 1.13358C9.88829 1.37883 9.69374 1.67 9.56101 1.99044C9.42828 2.31089 9.35996 2.65434 9.35996 3.00119C9.35996 3.34803 9.42828 3.69148 9.56101 4.01193C9.69374 4.33237 9.88829 4.62354 10.1335 4.8688C10.3788 5.11405 10.67 5.3086 10.9904 5.44134C11.3109 5.57407 11.6543 5.64239 12.0012 5.64239C12.7017 5.64223 13.3734 5.36381 13.8686 4.86837C14.3638 4.37294 14.6419 3.70108 14.6418 3.00059C14.6416 2.3001 14.3632 1.62836 13.8677 1.13315C13.3723 0.637942 12.7004 0.359826 12 0.359985H12.0012ZM3.60116 0.359985C3.25431 0.359985 2.91086 0.428302 2.59042 0.561035C2.26997 0.693767 1.97881 0.888317 1.73355 1.13358C1.48829 1.37883 1.29374 1.67 1.16101 1.99044C1.02828 2.31089 0.959961 2.65434 0.959961 3.00119C0.959961 3.34803 1.02828 3.69148 1.16101 4.01193C1.29374 4.33237 1.48829 4.62354 1.73355 4.8688C1.97881 5.11405 2.26997 5.3086 2.59042 5.44134C2.91086 5.57407 3.25431 5.64239 3.60116 5.64239C4.30165 5.64223 4.97339 5.36381 5.4686 4.86837C5.9638 4.37294 6.24192 3.70108 6.24176 3.00059C6.2416 2.3001 5.96318 1.62836 5.46775 1.13315C4.97231 0.637942 4.30045 0.359826 3.59996 0.359985H3.60116ZM20.4012 0.359985C20.0543 0.359985 19.7109 0.428302 19.3904 0.561035C19.07 0.693767 18.7788 0.888317 18.5336 1.13358C18.2883 1.37883 18.0937 1.67 17.961 1.99044C17.8283 2.31089 17.76 2.65434 17.76 3.00119C17.76 3.34803 17.8283 3.69148 17.961 4.01193C18.0937 4.33237 18.2883 4.62354 18.5336 4.8688C18.7788 5.11405 19.07 5.3086 19.3904 5.44134C19.7109 5.57407 20.0543 5.64239 20.4012 5.64239C21.1017 5.64223 21.7734 5.36381 22.2686 4.86837C22.7638 4.37294 23.0419 3.70108 23.0418 3.00059C23.0416 2.3001 22.7632 1.62836 22.2677 1.13315C21.7723 0.637942 21.1005 0.359826 20.4 0.359985H20.4012Z" fill="#A098AE"/>
+															</svg>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                            <a class="dropdown-item" href="javascript:void(0);">Xóa</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Sửa</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="contact-icon">
+                                                   <span class="badge badge-success light">Mathematics</span>
+												   <span class="badge badge-secondary light mx-2">Science</span> 
+												   <span class="badge badge-danger light">Art</span>
+                                                </div>
+												<div class="d-flex align-items-center">
+													<a href="./teacher-detail.html" class="btn  btn-primary btn-sm w-100 me-2"><i class="fa-solid fa-user me-2"></i>Xem chi tiết</a>
+	
+												</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/column-->
+									<!--column-->
+                                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                                        <div class="card contact_list text-center">
+                                          <div class="card-body">
+                                                <div class="user-content">
+                                                    <div class="user-info">
+                                                        <div class="user-img">
+                                                            <img src="./images/contacts/12.jpg" alt="" class="avatar avatar-xl">
+                                                        </div>
+                                                        <div class="user-details">
+                                                            <h4 class="user-name mb-0">Dimitres Viga</h4>
+                                                            <p>Giáo viên</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown">
+                                                        <a href="javascript:void(0);" class="btn sharp btn-light" data-bs-toggle="dropdown" aria-expanded="false">
+															<svg width="24" height="6" viewBox="0 0 24 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+																<path d="M12.0012 0.359985C11.6543 0.359985 11.3109 0.428302 10.9904 0.561035C10.67 0.693767 10.3788 0.888317 10.1335 1.13358C9.88829 1.37883 9.69374 1.67 9.56101 1.99044C9.42828 2.31089 9.35996 2.65434 9.35996 3.00119C9.35996 3.34803 9.42828 3.69148 9.56101 4.01193C9.69374 4.33237 9.88829 4.62354 10.1335 4.8688C10.3788 5.11405 10.67 5.3086 10.9904 5.44134C11.3109 5.57407 11.6543 5.64239 12.0012 5.64239C12.7017 5.64223 13.3734 5.36381 13.8686 4.86837C14.3638 4.37294 14.6419 3.70108 14.6418 3.00059C14.6416 2.3001 14.3632 1.62836 13.8677 1.13315C13.3723 0.637942 12.7004 0.359826 12 0.359985H12.0012ZM3.60116 0.359985C3.25431 0.359985 2.91086 0.428302 2.59042 0.561035C2.26997 0.693767 1.97881 0.888317 1.73355 1.13358C1.48829 1.37883 1.29374 1.67 1.16101 1.99044C1.02828 2.31089 0.959961 2.65434 0.959961 3.00119C0.959961 3.34803 1.02828 3.69148 1.16101 4.01193C1.29374 4.33237 1.48829 4.62354 1.73355 4.8688C1.97881 5.11405 2.26997 5.3086 2.59042 5.44134C2.91086 5.57407 3.25431 5.64239 3.60116 5.64239C4.30165 5.64223 4.97339 5.36381 5.4686 4.86837C5.9638 4.37294 6.24192 3.70108 6.24176 3.00059C6.2416 2.3001 5.96318 1.62836 5.46775 1.13315C4.97231 0.637942 4.30045 0.359826 3.59996 0.359985H3.60116ZM20.4012 0.359985C20.0543 0.359985 19.7109 0.428302 19.3904 0.561035C19.07 0.693767 18.7788 0.888317 18.5336 1.13358C18.2883 1.37883 18.0937 1.67 17.961 1.99044C17.8283 2.31089 17.76 2.65434 17.76 3.00119C17.76 3.34803 17.8283 3.69148 17.961 4.01193C18.0937 4.33237 18.2883 4.62354 18.5336 4.8688C18.7788 5.11405 19.07 5.3086 19.3904 5.44134C19.7109 5.57407 20.0543 5.64239 20.4012 5.64239C21.1017 5.64223 21.7734 5.36381 22.2686 4.86837C22.7638 4.37294 23.0419 3.70108 23.0418 3.00059C23.0416 2.3001 22.7632 1.62836 22.2677 1.13315C21.7723 0.637942 21.1005 0.359826 20.4 0.359985H20.4012Z" fill="#A098AE"/>
+															</svg>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                            <a class="dropdown-item" href="javascript:void(0);">Xóa</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Sửa</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="contact-icon">
+                                                   <span class="badge badge-success light">Mathematics</span>
+												   <span class="badge badge-secondary light mx-2">Science</span> 
+												   <span class="badge badge-danger light">Art</span>
+                                                </div>
+												<div class="d-flex align-items-center">
+													<a href="./teacher-detail.html" class="btn  btn-primary btn-sm w-100 me-2"><i class="fa-solid fa-user me-2"></i>Xem chi tiết</a>
+	
+												</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+								</div>	
 							<!--/column-->
+							</div>
+                           
+                        	<!--/Row -->
+						</div>
+					
+						<div class="table-pagenation teach">
+							<small>Showing <span>1-5</span> from <span>100</span> data</small>
+							<nav>
+								<ul class="pagination pagination-gutter pagination-primary no-bg">
+									<li class="page-item page-indicator">
+										<a class="page-link" href="javascript:void(0)">
+										<i class="fa-solid fa-chevron-left"></i></a>
+									</li>
+									<li class="page-item "><a class="page-link" href="javascript:void(0)">1</a>
+									</li>
+									<li class="page-item active"><a class="page-link" href="javascript:void(0)">2</a></li>
+									<li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+									<li class="page-item page-indicator">
+										<a class="page-link" href="javascript:void(0)">
+										<i class="fa-solid fa-chevron-right"></i></a>
+									</li>
+								</ul>
+							</nav>
 						</div>
 					</div>
+                    <div class="col-xl-3">
+                        <div class=" wow fadeInUp" data-wow-delay="1.5s">
+                            <div class="card">
+                                <div class="card-header pb-0 border-0 flex-wrap">
+                                    <div>
+                                        <div class="mb-3">
+                                            <h2 class="heading mb-0">Lịch</h2>	
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body text-center event-calender  py-0 px-1">
+                                    <input type='text' class="form-control d-none" id='datetimepicker2'>
+                                </div>
+                            </div>
+                        </div>
+						<div class="card h-auto wow fadeInUp" data-wow-delay="2s">
+                            <div class="card-header border-0 pb-0">
+                                <h4 class="card-title">Sự kiện</h4>
+                            </div>
+                            <div class="card-body p-0">
+                                <div id="DZ_W_TimeLine11" class="widget-timeline dlab-scroll style-1 height370 my-4 px-4">
+                                    <ul class="timeline">
+                                        <li>
+                                            <div class="timeline-badge primary"></div>
+                                            <a class="timeline-panel text-muted" href="#">
+                                                <span>10 minutes ago</span>
+                                                <h6 class="mb-0">Youtube, a video-sharing website, goes live <strong class="text-primary">$500</strong>.</h6>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="timeline-badge info">
+                                            </div>
+                                            <a class="timeline-panel text-muted" href="#">
+                                                <span>20 minutes ago</span>
+                                                <h6 class="mb-0">New order placed <strong class="text-info">#XF-2356.</strong></h6>
+												<p class="mb-0">Quisque a consequat ante Sit amet magna at volutapt...</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="timeline-badge danger">
+                                            </div>
+                                            <a class="timeline-panel text-muted" href="#">
+                                                <span>30 minutes ago</span>
+                                                <h6 class="mb-0">john just buy your product <strong class="text-warning">Sell $250</strong></h6>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="timeline-badge success">
+                                            </div>
+                                            <a class="timeline-panel text-muted" href="#">
+                                                <span>15 minutes ago</span>
+                                                <h6 class="mb-0">StumbleUpon is acquired by eBay. </h6>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="timeline-badge warning">
+                                            </div>
+                                            <a class="timeline-panel text-muted" href="#">
+                                                <span>20 minutes ago</span>
+                                                <h6 class="mb-0">Mashable, a news website and blog, goes live.</h6>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="timeline-badge dark">
+                                            </div>
+                                            <a class="timeline-panel text-muted" href="#">
+                                                <span>20 minutes ago</span>
+                                                <h6 class="mb-0">Mashable, a news website and blog, goes live.</h6>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 				</div>
-				<!--**********************************
-					Footer start
-				***********************************-->
 			</div>
 		</div>
 		
         <!--**********************************
             Content body end
         ***********************************-->
-			<!-- footer-start -->
-			
-				<div class="footer out-footer style-2">
-					<div class="copyright">
-						<p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">DexignLab</a> 2023</p>
-					</div>
-				</div>
-			
+
+		<div class="footer out-footer style-2">
+			<div class="copyright">
+				<p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">DexignLab</a> 2023</p>
+			</div>
+		</div> 
         <!--**********************************
             Footer end
         ***********************************-->
@@ -1251,57 +1737,82 @@
     <!--**********************************
         Main wrapper end
     ***********************************-->
+
 	<!--**********************************
 		Modal
 	***********************************-->
-	
+	<!-- Button trigger modal -->
+		
 
-			<!-- Modal -->
-			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			  <div class="modal-dialog modal-dialog-center">
-				<div class="modal-content">
-				  <div class="modal-header">
-					<h1 class="modal-title fs-5" id="exampleModalLabel">New Student Deatils</h1>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				  </div>
-				  <div class="modal-body">
-					<div class="row">
-						<div class="col-xl-6">
-							<div class="mb-3">
-							  <label for="exampleFormControlInput1" class="form-label">First Name</label>
-							  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Yatin">
-							</div>
-							<div class="mb-3">
-							  <label for="exampleFormControlInput3" class="form-label">Current Class</label>
-							  <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="VII A">
-							</div>
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-center">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h1 class="modal-title fs-5" id="exampleModalLabel">Teacher Details</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			  </div>
+			  <div class="modal-body">
+				<div class="row">
+					<div class="col-xl-6">
+						<div class="mb-3">
+						  <label for="exampleFormControlInput1" class="form-label">First Name</label>
+						  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Dimitres">
 						</div>
-						<div class="col-xl-6">
-							<div class="mb-3">
-							  <label for="exampleFormControlInput2" class="form-label">Last Name</label>
-							  <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="xarma">
-							</div>
-							 <label  class="form-label d-block">Gender</label>
-							 <select class="default-select" aria-label="Default select example">
-							  <option selected>Select</option>
-							  <option value="1">Male</option>
-							  <option value="2">Female</option>
-							  <option value="3">Other</option>
-							</select>
+						<div class="mb-3">
+						  <label for="exampleFormControlInput3" class="form-label">Email address</label>
+						  <input type="email" class="form-control" id="exampleFormControlInput3" placeholder="hello@example.com">
+						</div>
+						<div class="mb-3">
+						  <label  class="form-label">Subject</label>
+							<select class="default-select" aria-label="Default select example">
+								  <option selected>Select</option>
+								  <option value="1">Mathematics</option>
+								  <option value="2">Science</option>
+								  <option value="3">Art</option>
+								  <option value="4">History</option>
+								  <option value="5">Physics</option>
+								  <option value="6">Algorithm</option>
+								  <option value="7">Engilsh</option>
+								  <option value="8">Physics</option>
+								</select>
 						</div>
 					</div>
-				  </div>
-				  <div class="modal-footer">
-					<button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
-				  </div>
+					<div class="col-xl-6">
+						<div class="mb-3">
+						  <label for="exampleFormControlInput5" class="form-label">Last Name</label>
+						  <input type="text" class="form-control" id="exampleFormControlInput5" placeholder=" Viga">
+						</div>
+						<div class="mb-3">
+						  <label for="exampleFormControlInput6" class="form-label">Contact Number</label>
+						  <input type="number" class="form-control" id="exampleFormControlInput6" placeholder="+12345678">
+						</div>
+						<div class="mb-3">
+						  <label  class="form-label">Gender</label>
+							<select class="default-select" aria-label="Default select example">
+								  <option selected>Select</option>
+								  <option value="1">Male</option>
+								  <option value="2">Female</option>
+								  <option value="3">Other</option>
+								</select>
+						</div>
+						
+					</div>
+					
 				</div>
 			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			  </div>
 			</div>
+		  </div>
+		</div>
 
 	<!--**********************************
 		Modal
 	***********************************-->
+
     <!--**********************************
         Scripts
     ***********************************-->
@@ -1309,18 +1820,28 @@
     <script src="vendor/global/global.min.js"></script>
 	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 	
-	<!--datatables-->
-	<script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
-	<script src="js/plugins-init/datatables.init.js"></script>
 	
-	<!-- Dashboard 1 -->
+	<!-- Chart piety plugin files -->
+	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+	
+	<!--swiper-slider-->
+	<script src="vendor/swiper/js/swiper-bundle.min.js"></script>
+
 	<script src="vendor/wow-master/dist/wow.min.js"></script>
 	
-	<script src="js/custom.min.js"></script>
+    <script src="js/custom.min.js"></script>
 	<script src="js/dlabnav-init.js"></script>
+	<script src="vendor/bootstrap-datetimepicker/js/moment.js"></script>
+	<script src="vendor/datepicker/js/bootstrap-datepicker.min.js"></script>
+
+   <script>
+	 if(jQuery("#datetimepicker2").length>0) {
+		   $('#datetimepicker2').datetimepicker({
+			   inline: true,
+		   });
+	   }
+   </script>
 	
-   
-	
-	
+
 </body>
 </html>
