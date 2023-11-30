@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     	
     <meta charset="utf-8">
@@ -996,16 +996,12 @@
 						<i class="material-symbols-outlined">person</i>
 						<span class="nav-text">Học viên</span>
 					</a>
-					<ul aria-expanded="false">
-						<li><a href="javascript:void(0)">Dự tuyển</a></li>
-						<li><a href="javascript:void(0)">Học viên hiện tại</a></li>
-						<li><a href="javascript:void(0)">Cựu học viên</a></li>
-					</ul>
-						<!-- <ul aria-expanded="false">
+				
+						<ul aria-expanded="false">
 							<li><a href="./recruitment.html">Dự tuyển</a></li>
 							<li><a href="./current-student.html">Học viên hiện tại</a></li>
 							<li><a href="./former-student.html">Cựu học viên</a></li>
-						</ul> -->
+						</ul>
 					</li>
 					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
 						<i class="material-symbols-outlined">home_work</i>
@@ -1330,7 +1326,7 @@
 													<span>3/3/2023, 13:45 PM</span>
 												</td>
 												<td>
-													<span class="doller font-w600"> Xóa quản trị viên,</span>
+													<span class="doller font-w600"> Xóa quản trị viên</span>
 												</td>
 												<td class="pe-3">
 													<span class="text-danger font-w600">Thất bại</span>
@@ -1462,8 +1458,143 @@
 			</div>
 		</div>
 		<!--**********************************-->
-		
-		
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-center">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h1 class="modal-title fs-5" id="exampleModalLabel">Xét duyệt tài khoản </h1>
+				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body content-request">
+					<div class="text-res">
+						<h5 class="text-center">Đồng ý xét duyệt tài khoản Thanh Nga là quản trị viên tại [CSGD]</h5>
+					</div>
+					
+					<div class="w-100 select-res hidden">
+					<label for="" class="form-label text-primary">Vai trò quản lý<span class="required">*</span></label>	
+						<select class="w-100" id="#multiple-select-clear-field" multiple required>
+							<option value="1">Giáo viên</option>
+							<option value="2">Trợ giảng</option>
+							<option value="3">Giáo viên/Trợ giảng</option>
+							<option value="4">Administrator</option>
+						</select>
+					</div>
+				</div>
+				<div class="modal-footer">
+						<button type="button" class="btn btn-danger light refusebtn" data-bs-dismiss="modal">Từ chối</button>
+						<button type="button" class="btn btn-primary agreebtn">Đồng ý</button>
+						<button type="button" class="btn btn-primary acceptbtn hidden">Xác nhận</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="modal fade" id="modalConfirm" tabindex="-1" role="dialog" aria-labelledby="modalConfirmLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-center">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h1 class="modal-title fs-5" id="modalConfirmLabel">Xét duyệt tài khoản </h1>
+				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<h5 class="text-center">Bạn chắc chắn với thông tin vừa nhập?</h5>
+				</div>
+				<div class="modal-footer">
+						<button type="button" class="btn btn-danger light btnback" data-bs-dismiss="modal">Quay lại</button>
+						<button type="button" class="btn btn-primary btndone ">Xác nhận</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
+
+		<div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="modalEditLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-center modal-lg">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h1 class="modal-title fs-5" id="modalEditLabel">Chỉnh sửa thông tin </h1>
+				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="card-header">
+						<h5 class="mb-0">Thông tin tài khoản</h5>
+					</div>
+					<div class="card-body">
+						<div class="row">
+							<div class="col-xl-6 col-sm-6">
+								<div class="mb-3">
+									<label for="exampleFormControlInput1" class="form-label text-primary">Họ<span class="required">*</span></label>
+									<input type="text" class="form-control" id="exampleFormControlInput1" placeholder="James">
+								</div>
+								
+								<div class="mb-3">
+									<label for="exampleFormControlInput3" class="form-label text-primary">Email<span class="required">*</span></label>
+									<input type="email" class="form-control" id="exampleFormControlInput3" placeholder="hello@example.com">
+								</div>
+								<div class="mb-3">
+									<label for="exampleFormControlTextarea1" class="form-label text-primary">Địa chỉ<span class="required">*</span></label>
+									<textarea class="form-control" id="exampleFormControlTextarea1" rows="6">
+									
+									</textarea>
+								</div>
+								<div class="mb-3">
+										<label for="exampleFormControlInput10" class="form-label">Ngày sinh<span class="required">*</span></label>
+										<input class="form-control" type="text" id="datepicker">
+								</div>
+
+							</div>
+							<div class="col-xl-6 col-sm-6">
+								<div class="mb-3">
+									<label for="exampleFormControlInput4" class="form-label text-primary">Tên<span class="required">*</span></label>
+									<input type="text" class="form-control" id="exampleFormControlInput4" placeholder="Lee">
+								</div>
+								<div class="d-flex justify-content-between align-items-center mb-3" style="gap:20px;">
+									<div class="w-100">
+										<label for="exampleFormControlInput6" class="form-label text-primary">Số điện thoại<span class="required">*</span></label>
+										<input type="number" class="form-control" id="exampleFormControlInput6" placeholder="+123456789">
+										</div>
+										<div class="w-100">
+										<label for="exampleFormControlInput6" class="form-label text-primary">Vai trò<span class="required">*</span></label>
+										<select class="form-select wide form-control" required>
+											<option selected disabled value="">Chọn vai trò</option>
+											<option value="1">Giáo viên</option>
+											<option value="2">Trợ giảng</option>
+											<option value="2">Giáo viên/Trợ giảng</option>
+										</select>
+										</div>
+								</div>		
+								<div class="mb-3">
+									<label  class="form-label text-primary">Ảnh đại diện<span class="required">*</span></label>
+									<div class="avatar-upload">
+										<div class="avatar-preview" style="margin-bottom: 1.375rem !important;">
+											<div id="imagePreview" style="background-image: url(images/no-img-avatar.png);"> 			
+											</div>
+										</div>
+										<div class="change-btn">
+											<input type='file' class="form-control d-none"  id="imageUpload" accept=".png, .jpg, .jpeg">
+											<label for="imageUpload" class="dlab-upload mb-0 btn btn-primary btn-sm">Chọn File</label>
+											<a href="javascript:void(0);" class="btn btn-danger light remove-img ms-2 btn-sm">Xóa bỏ</a>
+										</div>
+									</div>
+								</div>
+								<div class="mb-3">
+									<label for="exampleFormControlInput8" class="form-label text-primary">Nơi sinh<span class="required">*</span></label>
+									<input type="text" class="form-control" id="exampleFormControlInput8" placeholder="USA">
+								</div>
+							</div>
+							<div class="col-12">
+								<label for="exampleFormControlInput6" class="form-label text-primary">Giới thiệu<span class="required">*</span></label>
+								<textarea class="form-control" placeholder="Nhập mô tả..." maxlength="1000" rows="7"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+						<button type="button" class="btn btn-danger light " data-bs-dismiss="modal">Hủy bỏ</button>
+						<button type="button" class="btn btn-primary  ">Lưu lại</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
+
         <!--**********************************
             Content body end
         ***********************************-->
@@ -1522,6 +1653,29 @@
 		$('.detail-back').on("click", function(){
 		window.history.go(-1);
 	})
+		$('.agreebtn').on("click", function(){
+				$('.text-res').addClass('hidden');
+				$('.agreebtn').addClass('hidden');
+				$('.select-res').removeClass('hidden');
+				$('.acceptbtn').removeClass('hidden')
+		})
+		$('.refusebtn').on('click', function(){
+			$('.select-res').addClass('hidden')
+			$('.text-res').removeClass('hidden');
+			$('.agreebtn').removeClass('hidden')
+			$('.acceptbtn').addClass('hidden')
+		})
+		$('.acceptbtn').on('click', function(){
+			$('#exampleModal').modal("hide");
+			$('#modalConfirm').modal("show");
+		})
+		$('.btnback').on('click', function(){
+			$('#exampleModal').modal("show");
+			$('#modalConfirm').modal("hide");
+		})
+		$('.btndone').on('click', function(){
+			$('#modalConfirm').modal("hide");
+		})
 	})
    </script>
 	
