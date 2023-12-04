@@ -11852,6 +11852,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   --title: #303972; }
 
 @media only screen and (min-width: 48rem) {
+
   [data-sidebar-style="mini"] .nav-header {
     width: 6.25rem; }
     [data-sidebar-style="mini"] .nav-header .nav-control {
