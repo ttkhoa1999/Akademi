@@ -27100,7 +27100,7 @@ body > * {
         padding: 1rem; } }
 
 .chat-left-area .chat-sidebar {
-  height: calc(100vh - 82px);
+  height: calc(100vh - 72px);
   border-right: 1px solid #D5DFE7;
   border-top: none; }
   @media only screen and (max-width: 74.9375rem) {
@@ -31135,5 +31135,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .btn-remove:hover{
   opacity:0.7;
   transition:0.5s all;
+}
+.active .list-teacher .col-xl-3{
+  flex: 0 0 auto;
+    width: 33.33333% !important;
 }
 /*# sourceMappingURL=style.css.map */
